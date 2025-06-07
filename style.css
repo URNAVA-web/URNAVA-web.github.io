@@ -1,5 +1,54 @@
-/* 더 안정적인 폰트 로딩 및 Fallback 최적화 */
-/* CSS @import 제거 - HTML에서 preload로 대체 */
+/* 로컬 폰트 파일 사용 - 모바일 최적화 */
+
+/* Inter Font Family */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-600.woff2') format('woff2');
+}
+
+/* Libre Baskerville Font Family */
+@font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/libre-baskerville-v16-latin/libre-baskerville-v16-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('./fonts/libre-baskerville-v16-latin/libre-baskerville-v16-latin-700.woff2') format('woff2');
+}
 
 /* CSS Variables */
 :root {
@@ -15,7 +64,7 @@
     --wisdom-accent: #CAA885;
     --connection-blue: #A8B8C8;
     
-    /* 개선된 폰트 스택 - 더 안정적인 Fallback */
+    /* 개선된 폰트 스택 - 로컬 폰트 우선 */
     --font-serif: 'Libre Baskerville', 'Georgia', 'Times New Roman', 'Times', serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', Arial, sans-serif;
     
@@ -51,22 +100,13 @@ body {
     font-variant-ligatures: none;
 }
 
-/* 웹폰트 로딩 실패 시를 위한 추가 보장 */
-@supports (font-display: swap) {
-    body {
-        font-display: swap;
-    }
-}
-
-/* 폰트 로딩 중 FOUT 최소화 */
-.font-loading * {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
-    visibility: hidden;
-}
-
-.fonts-loaded * {
+/* 로컬 폰트 사용으로 로딩 상태 관리 단순화 */
+.font-loading {
     visibility: visible;
-    transition: font-family 0.1s ease;
+}
+
+.fonts-loaded {
+    visibility: visible;
 }
 
 /* 공통 컨테이너 */
