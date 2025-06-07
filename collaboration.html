@@ -24,6 +24,52 @@
     <link rel="apple-touch-icon" sizes="60x60" href="./fabicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="57x57" href="./fabicon/apple-icon-57x57.png">
     
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="./fabicon/manifest.json">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./fabicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://urnava.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Collaboration",
+                "item": "https://urnava.com/collaboration.html"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Page Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "URNAVA Collaboration - Partner with Us for AI's Future",
+        "description": "Partner with us to shape the philosophical foundations for the future of AI. Connect with URNAVA for meaningful dialogue and partnership.",
+        "url": "https://urnava.com/collaboration.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "URNAVA",
+            "url": "https://urnava.com"
+        }
+    }
+    </script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
