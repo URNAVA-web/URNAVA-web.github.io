@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3N4NQEHH0T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-3N4NQEHH0T');
     </script>
     
     <meta charset="UTF-8">
@@ -141,7 +141,12 @@
                             </ul>
                         </div>
                         <div class="whitepaper-footer">
-                            <a href="./whitepaper/URNAVA_Summary.pdf" class="download-btn primary" download="URNAVA-Summary.pdf" target="_blank">
+                            <a href="./whitepaper/URNAVA_Summary.pdf" class="download-btn primary" download="URNAVA-Summary.pdf" target="_blank"
+                               onclick="gtag('event', 'file_download', {
+                                 'file_name': 'URNAVA_Summary.pdf',
+                                 'file_extension': 'pdf',
+                                 'link_text': 'Download Summary PDF'
+                               });">
                                 <span class="btn-icon">📄</span>
                                 Download Summary (PDF)
                             </a>
@@ -164,7 +169,12 @@
                             </ul>
                         </div>
                         <div class="whitepaper-footer">
-                            <a href="./whitepaper/URNAVA_In-depth.pdf" class="download-btn primary" download="URNAVA-In-depth.pdf" target="_blank">
+                            <a href="./whitepaper/URNAVA_In-depth.pdf" class="download-btn primary" download="URNAVA-In-depth.pdf" target="_blank"
+                               onclick="gtag('event', 'file_download', {
+                                 'file_name': 'URNAVA_In-depth.pdf',
+                                 'file_extension': 'pdf',
+                                 'link_text': 'Download In-depth PDF'
+                               });">
                                 <span class="btn-icon">📚</span>
                                 Download In-depth (PDF)
                             </a>
