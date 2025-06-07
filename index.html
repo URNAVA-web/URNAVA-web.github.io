@@ -34,6 +34,48 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./fabicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "URNAVA",
+        "alternateName": "URNAVA - New Wisdom for the AI Era",
+        "url": "https://urnava.com",
+        "description": "A philosophical compass exploring consciousness, AI relationships, and the future we choose to build together.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://urnava.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "URNAVA",
+            "url": "https://urnava.com",
+            "logo": "https://urnava.com/images/URNAVA_Logo.png",
+            "sameAs": [
+                "https://twitter.com/urnava_official"
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://urnava.com"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- 상단 네비게이션 -->
