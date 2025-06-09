@@ -2151,7 +2151,7 @@ section {
 }
 
 .license-content {
-    text-align: center;
+    text-align: left;
 }
 
 .license-text {
@@ -2160,6 +2160,7 @@ section {
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    text-align: left;
 }
 
 .license-text strong {
@@ -3089,5 +3090,61 @@ section {
     
     .nav-link {
         font-size: 0.95rem;
+    }
+}
+
+/* 모바일에서 긴 텍스트의 가독성 향상을 위한 스타일 */
+@media (max-width: 768px) {
+    /* 긴 문단 텍스트들을 모바일에서 왼쪽 정렬로 변경 */
+    .large-text,
+    .genesis-text,
+    .vision-text,
+    .exploration-text,
+    .integration-text p,
+    .exploration-content p,
+    .section-intro,
+    .urnava-meaning p,
+    .leah-meaning p {
+        text-align: left;
+    }
+    
+    /* 질문 아이템의 긴 텍스트도 왼쪽 정렬 */
+    .question-item {
+        text-align: left;
+    }
+    
+    /* 긴 설명 텍스트들 */
+    .philosophy-description,
+    .persona-description,
+    .whitepaper-description,
+    .partnership-text,
+    .invitation-text,
+    .contact-intro {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 더 작은 화면에서도 같은 규칙 적용 */
+    .large-text,
+    .genesis-text,
+    .vision-text,
+    .exploration-text,
+    .integration-text p,
+    .exploration-content p,
+    .section-intro,
+    .urnava-meaning p,
+    .leah-meaning p,
+    .philosophy-description,
+    .persona-description,
+    .whitepaper-description,
+    .partnership-text,
+    .invitation-text,
+    .contact-intro {
+        text-align: left;
+    }
+    
+    .question-item {
+        text-align: left;
     }
 }
