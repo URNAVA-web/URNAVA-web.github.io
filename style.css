@@ -335,7 +335,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     z-index: 2;
 }
 
-.hero-title {
+.hero-section .hero-title {
     font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif !important;
     font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 700 !important;
@@ -345,9 +345,10 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     line-height: 0.95;
     animation: fadeInUp 1.5s ease-out;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
-.hero-title * {
+.hero-section .hero-title * {
     font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif !important;
     font-weight: 700 !important;
 }
@@ -529,17 +530,17 @@ section {
     z-index: 1;
 }
 
-.urnava-meaning,
-.leah-meaning,
-.vision-statement {
-    margin-bottom: var(--spacing-xl);
-}
-
 .urnava-meaning {
     position: relative;
+    margin-bottom: var(--spacing-xl);
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
 }
 
-.wisdom-accent {
+.urnava-introduction .wisdom-accent {
     position: absolute;
     top: -15px;
     left: 50%;
@@ -548,6 +549,7 @@ section {
     height: 3px;
     background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent), var(--accent-gold));
     border-radius: 2px;
+    z-index: 2;
 }
 
 .urnava-meaning h3,
@@ -3147,4 +3149,9 @@ section {
     .question-item {
         text-align: left;
     }
+}
+
+.leah-meaning,
+.vision-statement {
+    margin-bottom: var(--spacing-xl);
 }
