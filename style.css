@@ -2541,7 +2541,7 @@ section {
 
 /*  ? ?(ִ 480px) */
 @media (max-width: 480px) {
-    /* === 네비게이션 === */
+    /* === ?�비게이??=== */
     .navbar {
         padding: 0 0.25rem;
     }
@@ -2871,15 +2871,25 @@ section {
         flex-shrink: 0;
     }
 
-    /* === 드롭다운 화살표 숨김 === */
+    /* === ?�롭?�운 ?�살???��? === */
     .nav-link.has-dropdown::before {
         display: none !important;
+    }
+
+    /* === ?�스?�에�??�치 조정 === */
+    .easter-eggs {
+        bottom: 130px;
+    }
+
+    /* === CTA 버튼 가운데 정렬 === */
+    .cta-btn {
+        text-align: center !important;
     }
 }
 
 /* 극소??모바??(? 320px) */
 @media (max-width: 320px) {
-    /* === 네비게이션 === */
+    /* === ?비게이??=== */
     .navbar {
         padding: 0 0.15rem;
     }
@@ -2967,7 +2977,7 @@ section {
         line-height: 1.5;
     }
 
-    /* === 드롭다운 화살표 숨김 === */
+    /* === ?롭?운 ?살???? === */
     .nav-link.has-dropdown::before {
         display: none !important;
     }
@@ -2975,7 +2985,7 @@ section {
 
 /* ?? ??모바??(? 768px) */
 @media (max-width: 768px) {
-    /* === 네비게이션 반응형 === */
+    /* === ?비게이??반응??=== */
     .navbar {
         padding: 0 var(--spacing-xs);
     }
@@ -3043,7 +3053,7 @@ section {
         display: none !important;
     }
 
-    /* === 언어 토글 === */
+    /* === ?어 ?? === */
     .language-toggle {
         margin-left: 0.25rem;
         flex-shrink: 0;
@@ -3177,7 +3187,7 @@ section {
     }
 
     .easter-eggs {
-        bottom: 100px;
+        bottom: 140px;
     }
 
     .star {
@@ -3215,7 +3225,7 @@ section {
         padding: var(--spacing-lg);
     }
 
-    /* === ?????��? === */
+    /* === ?????? === */
     .names-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -3297,7 +3307,7 @@ section {
         line-height: 1.7;
     }
 
-    /* === 3�??�로?�트 ???=== */
+    /* === 3??로?트 ???=== */
     .three-projects-section {
         padding: var(--spacing-xl) 0;
     }
@@ -3348,7 +3358,7 @@ section {
         font-size: 0.75rem;
     }
 
-    /* === ?�???????개선 === */
+    /* === ????????개선 === */
     p, span, div, h1, h2, h3, h4, h5, h6 {
         word-break: keep-all;
         overflow-wrap: break-word;
@@ -3360,7 +3370,12 @@ section {
         text-align: left;
     }
 
-    /* === ?�롭?�운 극소??=== */
+    .cta-btn {
+        touch-action: manipulation;
+        text-align: center;
+    }
+
+    /* === ?롭?운 극소??=== */
     .dropdown {
         min-width: 160px;
         max-width: 70vw;
@@ -3382,7 +3397,7 @@ section {
     }
 }
 
-/* 중간 ?�기 ?�면?�서 personas-grid 1???�환 */
+/* 중간 ?기 ?면?서 personas-grid 1???환 */
 @media (max-width: 950px) {
     .personas-grid {
         grid-template-columns: 1fr;
@@ -3390,7 +3405,7 @@ section {
     }
 }
 
-/* 중간 ?�기 ?�면?�서 personas-grid 1???�환 */
+/* 중간 ?기 ?면?서 personas-grid 1???환 */
 @media (max-width: 1100px) {
     .personas-grid {
         grid-template-columns: 1fr;
