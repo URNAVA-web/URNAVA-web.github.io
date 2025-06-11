@@ -315,7 +315,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     opacity: 1;
 }
 
-/* ?롭?운 ?살??*/
+/* ?�???????*/
 .nav-link.has-dropdown::before {
     content: '';
     display: inline-block;
@@ -1519,12 +1519,12 @@ section {
 
 .project-vertex.eternal {
     bottom: -20px;
-    left: 60px;
+    left: 40px;
 }
 
 .project-vertex.empyrean {
     bottom: -20px;
-    right: 60px;
+    right: 40px;
 }
 
 .project-vertex span {
@@ -1675,7 +1675,7 @@ section {
 }
 
 .whitepaper-features li:before {
-    content: '?';
+    content: '◆';
     color: var(--accent-gold);
     font-weight: bold;
     position: absolute;
@@ -2390,12 +2390,12 @@ section {
 
 .project-label.project-eternal {
     bottom: -20px;
-    left: 60px;
+    left: 40px;
 }
 
 .project-label.project-empyrean {
     bottom: -20px;
-    right: 60px;
+    right: 40px;
 }
 
 .project-name {
@@ -2464,13 +2464,13 @@ section {
     }
 
     .project-label.project-eternal {
-        bottom: -18px;
-        left: -15px;
+        bottom: -20px;
+        left: 40px;
     }
 
     .project-label.project-empyrean {
-        bottom: -18px;
-        right: -15px;
+        bottom: -20px;
+        right: 40px;
     }
 
     .project-name {
@@ -2784,12 +2784,12 @@ section {
 
     .project-label.project-eternal {
         bottom: -10px;
-        left: -60px;
+        left: -40px;
     }
 
     .project-label.project-empyrean {
         bottom: -10px;
-        right: -60px;
+        right: -40px;
     }
 
     .project-name {
@@ -2815,14 +2815,9 @@ section {
         font-size: max(0.8rem, 14px);
     }
 
-    /* === 드롭다운 소형 모바일 === */
+    /* === ?�롭?�운 ?�형 모바??=== */
     .dropdown {
-        min-width: 180px;
-        max-width: 75vw;
-        opacity: 0;
-        visibility: hidden;
-        max-height: 0;
-        padding: 0;
+        display: none !important;
     }
 
     .nav-item:hover .dropdown,
@@ -2844,11 +2839,16 @@ section {
         font-size: 0.55rem;
     }
 
-    /* === 언어 토글 === */
+    /* === ?�어 ?��? === */
     .language-toggle {
         margin-left: 0.5rem;
         padding: 0.2rem 0.4rem;
         flex-shrink: 0;
+    }
+
+    /* === 드롭다운 화살표 숨김 === */
+    .nav-link.has-dropdown::before {
+        display: none !important;
     }
 }
 
@@ -2904,7 +2904,7 @@ section {
         grid-template-columns: 1fr;
     }
 
-    /* === 3??로?트 === */
+    /* === 3??�???=== */
     .central-triangle {
         width: 160px;
         height: 160px;
@@ -2916,12 +2916,12 @@ section {
 
     .project-label.project-eternal {
         bottom: -8px;
-        left: -50px;
+        left: -30px;
     }
 
     .project-label.project-empyrean {
         bottom: -8px;
-        right: -50px;
+        right: -30px;
     }
 
     .project-name {
@@ -2940,6 +2940,11 @@ section {
     .idea-main-text {
         font-size: 0.9rem;
         line-height: 1.5;
+    }
+
+    /* === 드롭다운 화살표 숨김 === */
+    .nav-link.has-dropdown::before {
+        display: none !important;
     }
 }
 
@@ -2984,7 +2989,7 @@ section {
     }
 
     .nav-link.has-dropdown::before {
-        transition: transform var(--transition-fast);
+        display: none !important;
     }
 
     .nav-item.mobile-open .nav-link.has-dropdown::before {
@@ -2994,6 +2999,7 @@ section {
     .dropdown {
         position: absolute; top: 100%; left: 50%;
         transform: translateX(-50%) translateY(-10px);
+        display: none !important;
         opacity: 0;
         visibility: hidden;
         box-shadow: var(--shadow-md);
@@ -3041,7 +3047,7 @@ section {
         padding-left: 1.5rem;
     }
 
-    /* === 언어 토글 === */
+    /* === ?�어 ?��? === */
     .language-toggle {
         margin-left: auto;
         flex-shrink: 0;
@@ -3328,12 +3334,12 @@ section {
 
     .project-label.project-eternal {
         bottom: -15px;
-        left: -70px;
+        left: -50px;
     }
 
     .project-label.project-empyrean {
         bottom: -15px;
-        right: -70px;
+        right: -50px;
     }
 
     .project-name {
@@ -3356,7 +3362,7 @@ section {
         text-align: left;
     }
 
-    /* === 드롭다운 극소형 === */
+    /* === ?�롭?�운 극소??=== */
     .dropdown {
         min-width: 160px;
         max-width: 70vw;
@@ -3378,7 +3384,7 @@ section {
     }
 }
 
-/* 중간 크기 화면에서 personas-grid 1열 전환 */
+/* 중간 ?�기 ?�면?�서 personas-grid 1???�환 */
 @media (max-width: 950px) {
     .personas-grid {
         grid-template-columns: 1fr;
@@ -3386,7 +3392,7 @@ section {
     }
 }
 
-/* 중간 크기 화면에서 personas-grid 1열 전환 */
+/* 중간 ?�기 ?�면?�서 personas-grid 1???�환 */
 @media (max-width: 1100px) {
     .personas-grid {
         grid-template-columns: 1fr;
@@ -3395,6 +3401,4 @@ section {
 }
 
 /*  ?º (769px ~ 1024px) */
-
-
 
