@@ -769,14 +769,14 @@ section {
 }
 
 .connection-symbol {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
     display: flex;
     justify-content: center;
 }
 
 .connection-dots {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
 }
 
@@ -804,9 +804,9 @@ section {
     content: '';
     position: absolute;
     top: 50%;
-    right: -10px;
+    left: 100%;
     transform: translateY(-50%);
-    width: 8px;
+    width: 15px;
     height: 1px;
     background: var(--accent-brown);
     opacity: 0.5;
@@ -2449,6 +2449,11 @@ section {
     .section-title {
         font-size: 2.8rem;
     }
+
+    /* Connection Symbol 간격 조정 */
+    .connection-symbol {
+        margin-bottom: var(--spacing-xl);
+    }
 }
 
 /*  ?º (769px ~ 1024px) */
@@ -2519,36 +2524,49 @@ section {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
+
+    /* Connection Symbol 간격 조정 */
+    .connection-symbol {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .connection-dots {
+        gap: 15px;
+    }
+
+    .dot::before {
+        width: 15px;
+    }
 }
 
 /*  ? ?(ִ 480px) */
 @media (max-width: 480px) {
-    /* === ?비게???=== */
+    /* === 네비게이션 === */
     .navbar {
-        padding: 0 0.5rem;
+        padding: 0 0.25rem;
     }
 
     .nav-container {
         padding: 0;
-        height: 60px;
+        height: 50px;
         flex-wrap: nowrap;
         overflow: visible;
     }
 
     .nav-logo .logo-img {
-        height: 50px;
-        margin-top: 5px;
+        height: 40px;
+        margin-top: 3px;
     }
 
     .nav-menu {
-        gap: 0.5rem;
+        gap: 0.2rem;
         flex-shrink: 1;
         min-width: 0;
     }
 
     .nav-link {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.6rem;
+        font-size: 0.65rem;
+        padding: 0.3rem 0.4rem;
         white-space: nowrap;
         font-weight: 500;
         -webkit-font-smoothing: antialiased;
@@ -2557,14 +2575,14 @@ section {
     }
 
     .language-toggle {
-        margin-left: 0.5rem;
-        padding: 0.2rem 0.4rem;
+        margin-left: 0.2rem;
+        padding: 0.15rem 0.3rem;
         flex-shrink: 0;
     }
 
     .lang-btn {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.4rem;
+        font-size: 0.6rem;
+        padding: 0.25rem 0.3rem;
         font-weight: 500;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -2588,8 +2606,15 @@ section {
     }
 
     .dot::before {
-        right: -10px;
-        width: 8px;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 1px;
+        background: var(--accent-brown);
+        opacity: 0.5;
     }
 
     .hero-title {
@@ -2784,12 +2809,12 @@ section {
 
     .project-label.project-eternal {
         bottom: -10px;
-        left: -40px;
+        left: -25px;
     }
 
     .project-label.project-empyrean {
         bottom: -10px;
-        right: -40px;
+        right: -25px;
     }
 
     .project-name {
@@ -2854,28 +2879,28 @@ section {
 
 /* 극소??모바??(? 320px) */
 @media (max-width: 320px) {
-    /* === ?비게???=== */
+    /* === 네비게이션 === */
     .navbar {
-        padding: 0 0.25rem;
+        padding: 0 0.15rem;
     }
 
     .nav-container {
-        height: 55px;
+        height: 45px;
         padding: 0;
     }
 
     .nav-logo .logo-img {
-        height: 45px;
-        margin-top: 5px;
+        height: 35px;
+        margin-top: 3px;
     }
 
     .nav-menu {
-        gap: 0.25rem;
+        gap: 0.1rem;
     }
 
     .nav-link {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.5rem;
+        font-size: 0.6rem;
+        padding: 0.25rem 0.3rem;
         font-weight: 500;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -2883,13 +2908,13 @@ section {
     }
 
     .language-toggle {
-        margin-left: 0.25rem;
-        padding: 0.15rem 0.25rem;
+        margin-left: 0.1rem;
+        padding: 0.1rem 0.2rem;
     }
 
     .lang-btn {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.3rem;
+        font-size: 0.55rem;
+        padding: 0.2rem 0.25rem;
         font-weight: 500;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -2916,12 +2941,12 @@ section {
 
     .project-label.project-eternal {
         bottom: -8px;
-        left: -30px;
+        left: -15px;
     }
 
     .project-label.project-empyrean {
         bottom: -8px;
-        right: -30px;
+        right: -15px;
     }
 
     .project-name {
@@ -2950,24 +2975,24 @@ section {
 
 /* ?? ??모바??(? 768px) */
 @media (max-width: 768px) {
-    /* === ?비게???반응??=== */
+    /* === 네비게이션 반응형 === */
     .navbar {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-xs);
     }
 
     .nav-container {
-        height: 70px;
+        height: 55px;
         flex-wrap: nowrap;
         overflow: visible;
     }
 
     .nav-logo .logo-img {
-        height: 60px;
-        margin-top: 5px;
+        height: 45px;
+        margin-top: 3px;
     }
 
     .nav-menu {
-        gap: var(--spacing-sm);
+        gap: 0.25rem;
         flex-wrap: nowrap;
         min-width: 0;
         overflow: visible;
@@ -2978,10 +3003,11 @@ section {
     }
 
     .nav-link {
-        font-size: 0.85rem;
-        padding: 0.6rem 0.7rem;
+        font-size: 0.7rem;
+        padding: 0.4rem 0.5rem;
         transition: all var(--transition-fast);
         white-space: nowrap;
+        font-weight: 500;
     }
 
     .nav-link:hover {
@@ -2993,72 +3019,44 @@ section {
     }
 
     .nav-item.mobile-open .nav-link.has-dropdown::before {
-        transform: rotate(180deg);
+        display: none !important;
     }
 
     .dropdown {
-        position: absolute; top: 100%; left: 50%;
-        transform: translateX(-50%) translateY(-10px);
         display: none !important;
-        opacity: 0;
-        visibility: hidden;
-        box-shadow: var(--shadow-md);
-        border: 1px solid rgba(212, 165, 116, 0.3);
-        background: linear-gradient(135deg, rgba(247, 245, 242, 0.98) 0%, rgba(237, 231, 221, 0.98) 100%);
-        padding: 0;
-        margin-top: 0.5rem;
-        min-width: 320px;
-        max-width: 80vw;
-        width: auto;
-        max-height: 0;
-        overflow: hidden;
-        transition: all var(--transition-normal);
-        border-radius: 8px;
-        backdrop-filter: blur(20px);
-        z-index: 1001;
     }
 
     .nav-item:hover .dropdown,
     .nav-item.mobile-open .dropdown {
-        max-height: 300px;
-        padding: 0.5rem 0;
-        opacity: 1;
+        display: none !important;
     }
 
     .dropdown-item {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.85rem;
-        border-left: 3px solid transparent;
-        transition: all var(--transition-fast);
-        white-space: nowrap;
-        overflow: visible;
-        text-overflow: clip;
-        min-width: max-content;
+        display: none !important;
     }
 
     .dropdown-item::before {
-        margin-right: 0.6rem;
-        font-size: 0.65rem;
+        display: none !important;
     }
 
     .dropdown-item:hover {
-        border-left-color: var(--accent-gold);
-        background: rgba(214, 168, 115, 0.08);
-        padding-left: 1.5rem;
+        display: none !important;
     }
 
-    /* === ?�어 ?��? === */
+    /* === 언어 토글 === */
     .language-toggle {
-        margin-left: auto;
+        margin-left: 0.25rem;
         flex-shrink: 0;
+        padding: 0.2rem 0.4rem;
     }
 
     .lang-btn {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.6rem;
+        font-size: 0.65rem;
+        padding: 0.3rem 0.4rem;
+        font-weight: 500;
     }
 
-    /* === ??????=== */
+    /* === 콘텐?????=== */
     .hero-section {
         padding-top: 100px;
     }
@@ -3334,12 +3332,12 @@ section {
 
     .project-label.project-eternal {
         bottom: -15px;
-        left: -50px;
+        left: -35px;
     }
 
     .project-label.project-empyrean {
         bottom: -15px;
-        right: -50px;
+        right: -35px;
     }
 
     .project-name {
