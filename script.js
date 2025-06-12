@@ -29,6 +29,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // 드롭다운 네비게이션 기능 (hover 전용)
+    function initDropdown() {
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        navItems.forEach(navItem => {
+            const navLink = navItem.querySelector('.nav-link.has-dropdown');
+            const dropdown = navItem.querySelector('.dropdown');
+            
+            if (navLink && dropdown) {
+                // 클릭 이벤트는 기본 동작 허용 (모든 화면 크기에서 페이지 이동)
+                navLink.addEventListener('click', function(e) {
+                    // 모든 화면 크기에서 기본 동작 허용 (페이지 이동)
+                    return; // Vision 페이지로 이동
+                });
+                
+                // 드롭다운 외부 클릭 시 닫기 (데스크탑 전용)
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth > 768 && !navItem.contains(e.target)) {
+                        navItem.classList.remove('active');
+                    }
+                });
+                
+                // 화면 크기 변경 시 상태 초기화
+                window.addEventListener('resize', function() {
+                    navItem.classList.remove('mobile-open', 'active');
+                });
+            }
+        });
+    }
+    
+    // 드롭다운 초기화
+    initDropdown();
+    
     // 부드러운 스크롤 (CTA 버튼들)
     const ctaButtons = document.querySelectorAll('.cta-btn');
     
