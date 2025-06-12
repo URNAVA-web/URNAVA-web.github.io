@@ -2424,17 +2424,17 @@ section {
     /* 홈페이지 섹션 간격 모바일 조정 */
     .era-questions {
         padding: calc(var(--spacing-xxl) * 1.2) 0;
-        margin-bottom: calc(var(--spacing-xl) * 1.2);
+        margin-bottom: 0;
     }
     
     .urnava-introduction {
         padding: calc(var(--spacing-xxl) * 1.2) 0;
-        margin: calc(var(--spacing-xl) * 1.2) 0;
+        margin: 0;
     }
     
     .invitation-section {
         padding: calc(var(--spacing-xxl) * 1.2) 0;
-        margin-top: calc(var(--spacing-xl) * 1.2);
+        margin-top: 0;
     }
 }
 
@@ -2483,17 +2483,17 @@ section {
     /* 모바일 홈페이지 섹션 간격 최적화 */
     .era-questions {
         padding: var(--spacing-xxl) 0;
-        margin-bottom: var(--spacing-xl);
+        margin-bottom: 0;
     }
     
     .urnava-introduction {
         padding: var(--spacing-xxl) 0;
-        margin: var(--spacing-xl) 0;
+        margin: 0;
     }
     
     .invitation-section {
         padding: var(--spacing-xxl) 0;
-        margin-top: var(--spacing-xl);
+        margin-top: 0;
     }
 }
 
