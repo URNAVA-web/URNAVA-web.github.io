@@ -524,9 +524,12 @@ section {
 }
 
 .questions-list {
-    margin: var(--spacing-xl) 0;
+    margin: calc(var(--spacing-xl) * 1.5) 0;
     display: grid;
-    gap: var(--spacing-md);
+    gap: calc(var(--spacing-md) * 1.5);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .question-item {
@@ -541,6 +544,7 @@ section {
     gap: var(--spacing-sm);
     position: relative;
     text-align: center;
+    max-width: 100%;
 }
 
 .question-item:hover {
@@ -575,14 +579,14 @@ section {
     color: var(--text-secondary);
     text-align: center;
     line-height: 1.7;
-    margin-top: var(--spacing-lg);
+    margin-top: calc(var(--spacing-lg) * 1.8);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     font-style: italic;
 }
 
-/* URNAVA Introduction Section - 지??�?" ???+ 륄로 ???*/
+/* URNAVA Introduction Section - 새로운 지혜 소개 + 핵심 가치 */
 .urnava-introduction {
     background-color: var(--secondary-beige);
     position: relative;
@@ -614,7 +618,7 @@ section {
 
 .urnava-meaning {
     position: relative;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: calc(var(--spacing-xl) * 1.8);
     background-color: var(--white);
     padding: var(--spacing-xl);
     border-radius: 16px;
@@ -650,6 +654,10 @@ section {
     color: var(--text-secondary);
     text-align: center;
     line-height: 1.7;
+}
+
+.leah-meaning {
+    margin-bottom: calc(var(--spacing-xl) * 1.5);
 }
 
 .leah-values {
@@ -735,9 +743,10 @@ section {
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
     position: relative;
     border: 1px solid rgba(212, 165, 116, 0.2);
+    margin-top: calc(var(--spacing-xl) * 1.5);
 }
 
-/* Invitation Section - ???�?" + 륄로 ??????*/
+/* Invitation Section - 미지의 세계로의 초대 + 핵심 행동강령 */
 .invitation-section {
     background-color: var(--primary-beige);
     position: relative;
@@ -768,7 +777,7 @@ section {
 }
 
 .connection-symbol {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: calc(var(--spacing-xl) * 1.5);
     display: flex;
     justify-content: center;
 }
@@ -820,15 +829,15 @@ section {
     font-size: 1.3rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: calc(var(--spacing-md) * 1.8);
 }
 
-/* CTA 버튼??- ??????????*/
+/* CTA 버튼들 - 행동유도버튼 */
 .cta-buttons {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    margin-top: var(--spacing-xl);
+    margin-top: calc(var(--spacing-xl) * 1.8);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -2329,11 +2338,11 @@ section {
 
     /* Three Projects 간격 더 넓게 */
     .project-label.project-eternal {
-        left: 18%;
+        left: 8%;
     }
     
     .project-label.project-empyrean {
-        right: 18%;
+        right: 8%;
     }
 }
 
@@ -2353,11 +2362,11 @@ section {
     }
 
     .project-label.project-eternal {
-        left: 22%;
+        left: 15%;
     }
     
     .project-label.project-empyrean {
-        right: 22%;
+        right: 15%;
     }
 }
 
@@ -2414,9 +2423,24 @@ section {
         padding: 0.15rem 0.25rem;
         min-width: auto;
     }
+    
+    /* 홈페이지 섹션 간격 모바일 조정 */
+    .era-questions {
+        padding: calc(var(--spacing-xxl) * 1.2) 0;
+        margin-bottom: calc(var(--spacing-xl) * 1.2);
+    }
+    
+    .urnava-introduction {
+        padding: calc(var(--spacing-xxl) * 1.2) 0;
+        margin: calc(var(--spacing-xl) * 1.2) 0;
+    }
+    
+    .invitation-section {
+        padding: calc(var(--spacing-xxl) * 1.2) 0;
+        margin-top: calc(var(--spacing-xl) * 1.2);
+    }
 }
 
-/* 모바일 사이즈 (480px 이하) */
 @media (max-width: 480px) {
     .navbar {
         padding: 0 var(--spacing-xs);
@@ -2457,6 +2481,22 @@ section {
     .lang-btn {
         font-size: 0.6rem;
         padding: 0.1rem 0.2rem;
+    }
+    
+    /* 모바일 홈페이지 섹션 간격 최적화 */
+    .era-questions {
+        padding: var(--spacing-xxl) 0;
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .urnava-introduction {
+        padding: var(--spacing-xxl) 0;
+        margin: var(--spacing-xl) 0;
+    }
+    
+    .invitation-section {
+        padding: var(--spacing-xxl) 0;
+        margin-top: var(--spacing-xl);
     }
 }
 
@@ -2617,16 +2657,38 @@ section {
 /* 데스크탑 좁은 화면 (900px~1024px) - 라벨 간격 더 넓게 */
 @media (max-width: 1024px) and (min-width: 901px) {
     .project-label.project-eternal {
-        left: 12%;
+        left: 5%;
     }
     
     .project-label.project-empyrean {
-        right: 12%;
+        right: 5%;
     }
 }
 
 /* 중간 화면 (769px~900px) - 라벨 간격 적당히 */
 @media (max-width: 900px) and (min-width: 769px) {
+    .project-label.project-eternal {
+        left: 3%;
+    }
+    
+    .project-label.project-empyrean {
+        right: 3%;
+    }
+}
+
+/* 데스크탑 중간 크기 (1100px~1200px) - 라벨 간격 조금 넓게 */
+@media (max-width: 1200px) and (min-width: 1101px) {
+    .project-label.project-eternal {
+        left: 15%;
+    }
+    
+    .project-label.project-empyrean {
+        right: 15%;
+    }
+}
+
+/* 데스크탑 좁은 화면 2 (1000px~1100px) - 라벨 간격 더 넓게 */
+@media (max-width: 1100px) and (min-width: 1001px) {
     .project-label.project-eternal {
         left: 10%;
     }
@@ -2636,36 +2698,14 @@ section {
     }
 }
 
-/* 데스크탑 중간 크기 (1100px~1200px) - 라벨 간격 조금 넓게 */
-@media (max-width: 1200px) and (min-width: 1101px) {
-    .project-label.project-eternal {
-        left: 20%;
-    }
-    
-    .project-label.project-empyrean {
-        right: 20%;
-    }
-}
-
-/* 데스크탑 좁은 화면 2 (1000px~1100px) - 라벨 간격 더 넓게 */
-@media (max-width: 1100px) and (min-width: 1001px) {
-    .project-label.project-eternal {
-        left: 16%;
-    }
-    
-    .project-label.project-empyrean {
-        right: 16%;
-    }
-}
-
 /* 데스크탑 좁은 화면 1 (900px~1000px) - 라벨 간격 훨씬 더 넓게 */
 @media (max-width: 1000px) and (min-width: 901px) {
     .project-label.project-eternal {
-        left: 14%;
+        left: 8%;
     }
     
     .project-label.project-empyrean {
-        right: 14%;
+        right: 8%;
     }
 }
 
@@ -2729,11 +2769,11 @@ section {
     }
     
     .project-label.project-eternal {
-        left: 6%;
+        left: 0%;
     }
     
     .project-label.project-empyrean {
-        right: 6%;
+        right: 0%;
     }
 }
 
@@ -2745,11 +2785,11 @@ section {
     }
     
     .project-label.project-eternal {
-        left: 0%;
+        left: -5%;
     }
     
     .project-label.project-empyrean {
-        right: 0%;
+        right: -5%;
     }
 }
 
@@ -2764,12 +2804,12 @@ section {
     }
     
     .project-label.project-eternal {
-        left: -2%;
+        left: -8%;
         bottom: -15px;
     }
     
     .project-label.project-empyrean {
-        right: -2%;
+        right: -8%;
         bottom: -15px;
     }
     
