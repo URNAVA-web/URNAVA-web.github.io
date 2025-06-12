@@ -2000,9 +2000,6 @@ section {
     margin: 0 auto var(--spacing-lg) auto;
     filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
     display: block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .symbol-description {
@@ -2891,11 +2888,17 @@ section {
     .symbol-img {
         width: 90%;
         max-width: 600px;
+        margin: 0 auto var(--spacing-md) auto;
     }
     
     .urnava-symbol {
         padding: var(--spacing-md);
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
     
     .symbol-description {
@@ -2932,23 +2935,33 @@ section {
     .symbol-img {
         width: 95%;
         max-width: 400px;
+        margin: 0 auto var(--spacing-sm) auto;
     }
     
     .symbolic-element {
         margin: var(--spacing-md) auto;
         padding: 0 var(--spacing-xs);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .urnava-symbol {
         padding: var(--spacing-sm);
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
     }
     
     .symbol-description {
         max-width: 100%;
         font-size: 0.9rem;
         padding: var(--spacing-sm);
-        margin: 0 var(--spacing-xs);
+        margin: 0 auto;
     }
 }
 
@@ -2957,6 +2970,7 @@ section {
     .symbol-img {
         width: 100%;
         max-width: 300px;
+        margin: 0 auto var(--spacing-xs) auto;
     }
     
     .whitepaper-card {
@@ -2967,5 +2981,6 @@ section {
     .symbol-description {
         font-size: 0.85rem;
         padding: var(--spacing-sm);
+        margin: 0 auto;
     }
 }
