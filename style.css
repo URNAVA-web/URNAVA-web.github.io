@@ -1865,6 +1865,114 @@ section {
 
 /* Collaboration ?? ???????*/
 
+/* Proposal Section */
+.proposal-section {
+    background-color: var(--primary-beige);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.proposal-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 20%, transparent 47%, rgba(139, 115, 85, 0.04) 47.5%, rgba(139, 115, 85, 0.04) 53%, transparent 53.5%),
+        radial-gradient(circle at 70% 80%, transparent 47%, rgba(212, 165, 116, 0.04) 47.5%, rgba(212, 165, 116, 0.04) 53%, transparent 53.5%);
+    background-size: 450px 450px, 350px 350px;
+    pointer-events: none;
+}
+
+.proposal-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.proposal-text {
+    margin-bottom: var(--spacing-xl);
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    position: relative;
+}
+
+.proposal-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-brown), var(--accent-gold));
+    border-radius: 16px 16px 0 0;
+}
+
+.proposal-intro {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-serif);
+    text-align: center;
+}
+
+.proposal-description {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    font-style: normal;
+    text-align: left;
+}
+
+.proposal-description:last-of-type {
+    margin-bottom: 0;
+}
+
+.proposal-action {
+    margin-top: var(--spacing-lg);
+}
+
+.proposal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--accent-brown);
+    color: var(--white);
+    text-decoration: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border: 2px solid var(--accent-brown);
+    box-shadow: 0 4px 15px rgba(139, 115, 85, 0.2);
+}
+
+.proposal-btn:hover {
+    background-color: #6F5A42;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3);
+}
+
+.btn-text {
+    font-family: var(--font-sans);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
 /* Names Section */
 .names-section {
     background-color: var(--white);
@@ -2931,6 +3039,35 @@ section {
         padding: 0 var(--spacing-sm);
     }
     
+    /* Proposal Section 모바일 */
+    .proposal-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .proposal-content {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .proposal-text {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .proposal-intro {
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .proposal-description {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .proposal-btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 1rem;
+    }
+
     /* Collaboration 페이지 eye 이미지 모바일 */
     .symbol-img {
         width: 95%;
@@ -2983,4 +3120,14 @@ section {
         padding: var(--spacing-sm);
         margin: 0 auto;
     }
+}
+
+.whitepaper-version {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    margin-bottom: 0.2em;
+    font-weight: 400;
+    letter-spacing: 0.2px;
 }
