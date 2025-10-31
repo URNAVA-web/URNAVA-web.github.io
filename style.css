@@ -729,21 +729,48 @@ section {
     font-style: italic;
 }
 
-.vision-text {
-    font-size: 1.3rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    text-align: center;
-    margin: 0;
-    font-style: italic;
-    font-weight: 400;
+.vision-box {
     background-color: var(--white);
     padding: var(--spacing-xl);
     border-radius: 16px;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    position: relative;
     border: 1px solid rgba(212, 165, 116, 0.2);
     margin-top: calc(var(--spacing-xl) * 1.5);
+}
+
+.vision-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    text-align: center;
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.vision-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: var(--spacing-sm) 0;
+}
+
+.vision-separator .tri {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid var(--accent-brown);
+    opacity: 0.9;
+}
+
+.vision-separator .tri:nth-child(2) {
+    border-bottom-color: var(--accent-gold);
+}
+
+.vision-separator .tri:nth-child(3) {
+    border-bottom-color: var(--wisdom-accent);
 }
 
 /* Invitation Section - 미지의 세계로의 초대 + 핵심 행동강령 */
