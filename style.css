@@ -1616,6 +1616,7 @@ section {
     color: var(--text-primary);
     margin-bottom: var(--spacing-md);
     font-weight: 600;
+    text-align: center;
 }
 
 .exploration-content p {
