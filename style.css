@@ -1966,7 +1966,39 @@ section {
     text-align: left;
 }
 
+.proposal-description:has(+ .proposal-pillars) {
+    margin-bottom: var(--spacing-sm); 
+}
+
 .proposal-description:last-of-type {
+    margin-bottom: 0;
+}
+
+.proposal-pillars {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 2rem; 
+    text-align: left;
+}
+
+.proposal-pillars li {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: calc(var(--spacing-sm) * 0.5);
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.proposal-pillars li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-brown);
+    font-weight: 600;
+}
+
+.proposal-pillars li:last-child {
     margin-bottom: 0;
 }
 
