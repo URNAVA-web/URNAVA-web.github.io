@@ -1585,7 +1585,6 @@ section {
 /* Deeper Exploration Section */
 .deeper-exploration {
     background-color: var(--secondary-beige);
-    text-align: center;
     position: relative;
 }
 
@@ -1606,6 +1605,9 @@ section {
 .exploration-content {
     position: relative;
     z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .exploration-content h2 {
@@ -1620,8 +1622,7 @@ section {
     font-size: 1.2rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    max-width: 700px;
-    margin: 0 auto var(--spacing-xl);
+    margin: 0 0 var(--spacing-xl) 0;
 }
 
 /* 매우 ?? ????personas-grid?1???*/
