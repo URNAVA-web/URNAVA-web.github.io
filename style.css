@@ -2477,6 +2477,21 @@ section > * {
         padding: var(--spacing-md);
         margin: 0 auto;
     }
+    
+    /* CTA 섹션 제목 및 본문 통일 (Vision, Whitepaper, Collaboration) */
+    .exploration-content h2,
+    .invitation-section .section-title,
+    .partnership-section .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .exploration-content p,
+    .invitation-text,
+    .partnership-text,
+    .partnership-call {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
 }
 
 /* 모바일 사이즈 추가 반응형 */
@@ -2710,6 +2725,21 @@ section > * {
     .meaning-section p,
     .pronunciation-section p {
         font-size: 0.95rem;
+    }
+    
+    /* CTA 섹션 제목 및 본문 통일 - 작은 모바일 */
+    .exploration-content h2,
+    .invitation-section .section-title,
+    .partnership-section .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .exploration-content p,
+    .invitation-text,
+    .partnership-text,
+    .partnership-call {
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 }
 
