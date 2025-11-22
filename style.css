@@ -2418,7 +2418,7 @@ section > * {
     
     /* Vision 페이지 - System Integration (Harmonic Synthesis) 모바일 최적화 */
     .system-integration {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: var(--spacing-md) var(--spacing-md);
         margin-top: var(--spacing-xl);
         border-radius: 12px;
     }
@@ -2432,6 +2432,30 @@ section > * {
         font-size: 0.95rem;
         line-height: 1.75;
         text-align: left;
+    }
+    
+    /* Philosophy Items 모바일 */
+    .philosophy-item {
+        padding: var(--spacing-lg) var(--spacing-md);
+        border-radius: 12px;
+    }
+    
+    .philosophy-item h3 {
+        font-size: 1.4rem;
+    }
+    
+    .philosophy-description {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    
+    .philosophy-details p {
+        font-size: 0.9rem;
+    }
+    
+    /* LEAH Meaning 텍스트 */
+    .leah-meaning p {
+        text-align: center;
     }
     
     /* Proposal Section 모바일 */
@@ -2620,7 +2644,7 @@ section > * {
     
     /* Vision 페이지 - System Integration 극소형 화면 */
     .system-integration {
-        padding: var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-sm);
         border-radius: 8px;
     }
     
@@ -2631,6 +2655,23 @@ section > * {
     .system-integration p {
         font-size: 0.9rem;
         line-height: 1.7;
+    }
+    
+    /* Philosophy Items 작은 모바일 */
+    .philosophy-item {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .philosophy-item h3 {
+        font-size: 1.25rem;
+    }
+    
+    .philosophy-description {
+        font-size: 0.9rem;
+    }
+    
+    .philosophy-details p {
+        font-size: 0.85rem;
     }
 }
 
