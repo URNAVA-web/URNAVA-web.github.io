@@ -1309,7 +1309,11 @@ section > * {
     font-size: 1.2rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    margin: 0 0 var(--spacing-xl) 0;
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.exploration-content p:last-of-type {
+    margin-bottom: var(--spacing-lg);
 }
 
 /* ===== Responsive Breakpoints for Persona Grid ===== */
@@ -1809,6 +1813,33 @@ section > * {
     border: 1px solid rgba(212, 165, 116, 0.3);
     position: relative;
     z-index: 1;
+}
+
+.version-text {
+    margin-bottom: var(--spacing-md);
+}
+
+.date-highlight {
+    color: var(--accent-brown);
+}
+
+.branding-notice {
+    padding-top: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    border-top: 1px solid rgba(212, 165, 116, 0.35);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.branding-notice a {
+    color: var(--accent-brown);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.branding-notice a:hover {
+    color: var(--accent-gold);
 }
 
 .version-text {
