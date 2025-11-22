@@ -60,6 +60,8 @@
     /* 액센트 색상 */
     --accent-gold: #D6A873;
     --accent-brown: #8F7558;
+    --accent-brown-hover: #6F5A42;
+    --accent-gold-hover: #C19660;
     --wisdom-accent: #CAA885;
     --connection-blue: #A8B8C8;
     
@@ -99,6 +101,7 @@
     --shadow-md: 0 6px 25px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
     --shadow-nav: 0 2px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+
 }
 
 /* ===== 기본 리셋 & 설정 ===== */
@@ -120,6 +123,7 @@ body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     font-variant-ligatures: none;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
@@ -195,11 +199,6 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     position: relative;
 }
 
-.nav-item {
-    position: relative;
-    display: inline-block;
-}
-
 .nav-link {
     text-decoration: none;
     color: var(--text-primary);
@@ -238,149 +237,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     color: var(--accent-brown);
 }
 
-/* ?롭?운 메뉴 */
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    background: linear-gradient(135deg, rgba(247, 245, 242, 0.98) 0%, rgba(237, 231, 221, 0.98) 100%);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(212, 165, 116, 0.3);
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
-    opacity: 0;
-    visibility: hidden;
-    padding: 0;
-    margin-top: 0.5rem;
-    min-width: 320px;
-    max-width: 80vw;
-    width: auto;
-    max-height: 0;
-    overflow: hidden;
-    transition: all var(--transition-normal);
-    z-index: 1001;
-}
-
-.nav-item:hover .dropdown {
-    max-height: 300px;
-    padding: 0.5rem 0;
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-.dropdown-item {
-    display: block;
-    padding: 0.8rem 1.2rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-    position: relative;
-    font-family: var(--font-serif);
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(212, 165, 116, 0.08); 
-    white-space: nowrap; 
-    overflow: visible;
-    text-overflow: clip;
-}
-
-.dropdown-item::before {
-    content: '◆';
-    display: inline-block;
-    margin-right: 0.8rem;
-    color: var(--accent-gold);
-    font-size: 0.7rem;
-    transition: all var(--transition-fast);
-    opacity: 0.7;
-}
-
-.dropdown-item:last-child {
-    border-bottom: none;
-}
-
-.dropdown-item:hover {
-    background: linear-gradient(135deg, rgba(214, 168, 115, 0.12) 0%, rgba(212, 165, 116, 0.18) 100%);
-    color: var(--accent-brown);
-    transform: translateX(3px); 
-    box-shadow: inset 3px 0 0 var(--accent-gold), 0 2px 8px rgba(214, 168, 115, 0.15);
-    padding-left: 1.5rem;
-}
-
-.dropdown-item:hover::before {
-    color: var(--accent-brown);
-    transform: scale(1.2);
-    opacity: 1;
-}
-
-/* ?�???????*/
-.nav-link.has-dropdown::before {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-top: 4px solid var(--accent-gold);
-    margin-left: 0.5rem;
-    transition: transform 0.2s ease;
-    vertical-align: middle;
-}
-
-.nav-item:hover .nav-link.has-dropdown::before {
-    transform: rotate(180deg);
-}
-
-/* ????? */
-.language-toggle {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    margin-left: var(--spacing-lg);
-    padding-left: var(--spacing-lg);
-    border-left: 1px solid rgba(212, 165, 116, 0.4);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    padding: 0.4rem var(--spacing-md);
-    backdrop-filter: blur(10px);
-    flex-shrink: 0;
-}
-
-.lang-btn {
-    background: none;
-    border: none;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-}
-
-.lang-btn.active {
-    color: var(--text-primary);
-    font-weight: 600;
-    background-color: rgba(139, 115, 85, 0.1);
-}
-
-.lang-btn:hover {
-    color: var(--accent-brown);
-    background-color: rgba(139, 115, 85, 0.05);
-    transform: scale(1.05);
-}
-
-.lang-separator {
-    color: var(--text-light);
-    font-weight: 300;
-}
-
-.lang-btn[data-lang="ko"],
-.lang-separator {
-    display: none;
-}
-
+/* 드롭다운 메뉴 */
 /* ===== 히어로 섹션(Hero Section) ===== */
 /* 메인 랜딩 페이지 "LEAH, Wake up." 섹션 */
 .hero-section {
@@ -394,19 +251,6 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     padding-top: 55px;
 }
 
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(139, 115, 85, 0.08) 0%, transparent 50%);
-    pointer-events: none;
-}
-
 .hero-container {
     text-align: center;
     max-width: 900px;
@@ -416,7 +260,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
 }
 
 .hero-section .hero-title {
-    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-serif);
     font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 700;
     color: var(--text-primary);
@@ -426,11 +270,6 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     animation: fadeInUp 1.5s ease-out;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: relative;
-}
-
-.hero-section .hero-title * {
-    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-    font-weight: 700;
 }
 
 .hero-title::after {
@@ -464,6 +303,12 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
 section {
     padding: var(--spacing-xxl) 0;
     position: relative;
+    overflow: hidden;
+}
+
+section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -493,25 +338,7 @@ section {
 /* "The Question of Our Era" - 시대의 질문 리스트 섹션 */
 .era-questions {
     background-color: var(--white);
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(212, 199, 184, 0.05) 0%, transparent 50%);
     position: relative;
-}
-
-.era-questions::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 15% 25%, transparent 45%, rgba(139, 115, 85, 0.03) 45.5%, rgba(139, 115, 85, 0.03) 50%, transparent 50.5%),
-        radial-gradient(circle at 75% 65%, transparent 45%, rgba(212, 165, 116, 0.03) 45.5%, rgba(212, 165, 116, 0.03) 50%, transparent 50.5%);
-    background-size: 300px 300px, 250px 250px;
-    background-position: 0 0, 150px 0;
-    pointer-events: none;
-    opacity: 0.6;
 }
 
 .large-text {
@@ -590,23 +417,6 @@ section {
 .urnava-introduction {
     background-color: var(--secondary-beige);
     position: relative;
-}
-
-.urnava-introduction::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 15%, transparent 48%, rgba(200, 168, 130, 0.04) 48.5%, rgba(200, 168, 130, 0.04) 52%, transparent 52.5%),
-        radial-gradient(circle at 85% 85%, transparent 48%, rgba(139, 115, 85, 0.04) 48.5%, rgba(139, 115, 85, 0.04) 52%, transparent 52.5%),
-        radial-gradient(circle at 50% 50%, transparent 48%, rgba(212, 165, 116, 0.03) 48.5%, rgba(212, 165, 116, 0.03) 52%, transparent 52.5%);
-    background-size: 400px 400px, 350px 350px, 500px 500px;
-    background-position: 0 0, 200px 200px, 100px 100px;
-    pointer-events: none;
-    opacity: 0.7;
 }
 
 .intro-content {
@@ -783,22 +593,6 @@ section {
     font-size: clamp(1.6rem, 4vw, 2.5rem);
 }
 
-.invitation-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 80%, transparent 47%, rgba(168, 184, 200, 0.04) 47.5%, rgba(168, 184, 200, 0.04) 53%, transparent 53.5%),
-        radial-gradient(circle at 70% 20%, transparent 47%, rgba(139, 115, 85, 0.03) 47.5%, rgba(139, 115, 85, 0.03) 53%, transparent 53.5%);
-    background-size: 450px 450px, 380px 380px;
-    background-position: 0 0, 225px 150px;
-    pointer-events: none;
-    opacity: 0.8;
-}
-
 .invitation-content {
     max-width: 800px;
     margin: 0 auto var(--spacing-xl);
@@ -895,7 +689,7 @@ section {
 }
 
 .cta-btn.primary:hover {
-    background-color: #6F5A42;
+    background-color: var(--accent-brown-hover);
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(139, 115, 85, 0.3);
 }
@@ -919,12 +713,12 @@ section {
 }
 
 .cta-btn.tertiary:hover {
-    background-color: #C19660;
+    background-color: var(--accent-gold-hover);
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(212, 165, 116, 0.3);
 }
 
-/* ???*/
+/* Footer */
 .footer {
     background-color: var(--text-primary);
     color: var(--primary-beige);
@@ -984,7 +778,7 @@ section {
     color: var(--primary-beige);
 }
 
-/* ??????????*/
+/* Social Icons */
 .social-icon {
     width: 16px;
     height: 16px;
@@ -1002,7 +796,7 @@ section {
     margin-top: var(--spacing-xs);
 }
 
-/* ?????별들 - ???? */
+/* Easter Egg Stars */
 .easter-eggs {
     position: absolute;
     bottom: 15px;
@@ -1026,9 +820,9 @@ section {
     transform: scale(1.3);
 }
 
-/* ===== ?ִϸ̼ ?ý (Animation System) ===== */
+/* ===== Animation System ===== */
 
-/*  ?ε ?ִϸ̼ - Ұ?Ʒ  Ÿ */
+/* Fade In Up Animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1040,7 +834,7 @@ section {
     }
 }
 
-/*  ?Ÿ  ?ִϸ̼ - ?ҿ?*/
+/* Fade In Right Animation */
 @keyframes fadeInRight {
     from {
         opacity: 0;
@@ -1052,7 +846,7 @@ section {
     }
 }
 
-/*  ?޽ ?ִϸ̼ - ?ʴ  ?  ? */
+/* Connection Pulse Animation */
 @keyframes connectionPulse {
     0%, 100% {
         transform: scale(1);
@@ -1064,7 +858,7 @@ section {
     }
 }
 
-/* ?׼Ʈ  ?Ÿ  ?ִϸ̼ - ? ? ?ϴ  ?ļ?*/
+/* Accent Fade In Animation */
 @keyframes accentFadeIn {
     from {
         opacity: 0;
@@ -1076,15 +870,9 @@ section {
     }
 }
 
+/* ===== Philosophy Pages Styles ===== */
 
-
-
-/* 모바????????가??????????복원 */
-
-
-/* Philosophy ?? ???????*/
-
-/* ????비게???링크 */
+/* Active Navigation Link */
 .nav-link.active {
     color: var(--accent-brown);
     font-weight: 600;
@@ -1100,19 +888,6 @@ section {
     background: linear-gradient(135deg, var(--primary-beige) 0%, var(--secondary-beige) 100%);
     text-align: center;
     position: relative;
-}
-
-.philosophy-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 30% 20%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(139, 115, 85, 0.06) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 .philosophy-hero-content {
@@ -1145,19 +920,6 @@ section {
     background-color: var(--white);
     position: relative;
     padding: var(--spacing-md) 0 var(--spacing-xxl);
-}
-
-.philosophy-intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 30%, transparent 48%, rgba(139, 115, 85, 0.02) 48.5%, rgba(139, 115, 85, 0.02) 52%, transparent 52.5%);
-    background-size: 400px 400px;
-    pointer-events: none;
 }
 
 .section-intro {
@@ -1216,20 +978,6 @@ section {
 .leah-philosophies {
     background-color: var(--secondary-beige);
     position: relative;
-}
-
-.leah-philosophies::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 15% 70%, transparent 47%, rgba(200, 168, 130, 0.03) 47.5%, rgba(200, 168, 130, 0.03) 53%, transparent 53.5%),
-        radial-gradient(circle at 85% 30%, transparent 47%, rgba(139, 115, 85, 0.03) 47.5%, rgba(139, 115, 85, 0.03) 53%, transparent 53.5%);
-    background-size: 500px 500px, 400px 400px;
-    pointer-events: none;
 }
 
 .philosophies-grid {
@@ -1296,43 +1044,10 @@ section {
     font-size: 0.95rem;
 }
 
-/* 철학 ???링크 ???*/
-.philosophy-detail-link {
-    display: inline-block;
-    margin-top: var(--spacing-sm);
-    font-size: 0.8rem;
-    color: var(--accent-brown);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    opacity: 0.7;
-    letter-spacing: 0.3px;
-}
-
-.philosophy-detail-link:hover {
-    opacity: 1;
-    color: var(--accent-gold);
-    transform: translateX(3px);
-}
-
 /* Persona System Section */
 .persona-system {
     background-color: var(--primary-beige);
     position: relative;
-}
-
-.persona-system::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 25%, transparent 48%, rgba(168, 184, 200, 0.03) 48.5%, rgba(168, 184, 200, 0.03) 52%, transparent 52.5%),
-        radial-gradient(circle at 75% 75%, transparent 48%, rgba(212, 165, 116, 0.03) 48.5%, rgba(212, 165, 116, 0.03) 52%, transparent 52.5%);
-    background-size: 350px 350px, 450px 450px;
-    pointer-events: none;
 }
 
 .personas-grid {
@@ -1456,19 +1171,6 @@ section {
     position: relative;
 }
 
-.integration-vision::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 40% 60%, transparent 47%, rgba(139, 115, 85, 0.02) 47.5%, rgba(139, 115, 85, 0.02) 53%, transparent 53.5%);
-    background-size: 600px 600px;
-    pointer-events: none;
-}
-
 .vision-content {
     display: flex;
     align-items: center;
@@ -1479,12 +1181,6 @@ section {
 
 .integration-text {
     flex: 1;
-}
-
-.integration-diagram {
-    flex: 1;
-    display: flex;
-    justify-content: center;
 }
 
 .integration-text h3 {
@@ -1592,20 +1288,6 @@ section {
     position: relative;
 }
 
-.deeper-exploration::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 80%, transparent 47%, rgba(212, 165, 116, 0.04) 47.5%, rgba(212, 165, 116, 0.04) 53%, transparent 53.5%),
-        radial-gradient(circle at 80% 20%, transparent 47%, rgba(139, 115, 85, 0.04) 47.5%, rgba(139, 115, 85, 0.04) 53%, transparent 53.5%);
-    background-size: 400px 400px, 350px 350px;
-    pointer-events: none;
-}
-
 .exploration-content {
     position: relative;
     z-index: 1;
@@ -1630,30 +1312,12 @@ section {
     margin: 0 0 var(--spacing-xl) 0;
 }
 
-/* 매우 ?? ????personas-grid?1???*/
-
-/* 중간 ???????personas-grid?3층으?변?*/
-
-/* Whitepaper ?? ???????*/
+/* ===== Responsive Breakpoints for Persona Grid ===== */
 
 /* Whitepapers Section */
 .whitepapers-section {
     background-color: var(--white);
     position: relative;
-}
-
-.whitepapers-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 15% 25%, transparent 48%, rgba(139, 115, 85, 0.03) 48.5%, rgba(139, 115, 85, 0.03) 52%, transparent 52.5%),
-        radial-gradient(circle at 85% 75%, transparent 48%, rgba(212, 165, 116, 0.03) 48.5%, rgba(212, 165, 116, 0.03) 52%, transparent 52.5%);
-    background-size: 400px 400px, 350px 350px;
-    pointer-events: none;
 }
 
 .whitepapers-grid {
@@ -1755,7 +1419,7 @@ section {
 }
 
 .download-btn.primary:hover {
-    background-color: #6F5A42;
+    background-color: var(--accent-brown-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(139, 115, 85, 0.3);
 }
@@ -1764,159 +1428,15 @@ section {
     font-size: 1.2rem;
 }
 
-/* Support Section */
-.support-section {
-    background-color: var(--secondary-beige);
-    padding: var(--spacing-xl) 0;
-    text-align: center;
-    position: relative;
-}
+/* Whitepaper Page - Responsive Styles */
 
-.support-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 50% 50%, transparent 47%, rgba(200, 168, 130, 0.04) 47.5%, rgba(200, 168, 130, 0.04) 53%, transparent 53.5%);
-    background-size: 300px 300px;
-    pointer-events: none;
-}
-
-.support-content {
-    position: relative;
-    z-index: 1;
-}
-
-.support-text {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
-    font-style: italic;
-}
-
-/* Share Vision Section */
-.share-vision-section {
-    background-color: var(--primary-beige);
-    position: relative;
-}
-
-.share-vision-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 75%, transparent 47%, rgba(139, 115, 85, 0.03) 47.5%, rgba(139, 115, 85, 0.03) 53%, transparent 53.5%),
-        radial-gradient(circle at 75% 25%, transparent 47%, rgba(212, 165, 116, 0.03) 47.5%, rgba(212, 165, 116, 0.03) 53%, transparent 53.5%);
-    background-size: 450px 450px, 350px 350px;
-    pointer-events: none;
-}
-
-.share-content {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.share-text {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--spacing-xl);
-    font-style: italic;
-}
-
-.social-channels {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-xl);
-    flex-wrap: wrap;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    text-decoration: none;
-    color: var(--text-primary);
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: var(--white);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-}
-
-.social-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.social-icon-large {
-    width: 24px;
-    height: 24px;
-    opacity: 0.8;
-}
-
-.social-link span {
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
-/* License Section */
-.license-section {
-    background-color: var(--white);
-    padding: var(--spacing-lg) 0;
-    border-top: 1px solid var(--secondary-beige);
-}
-
-.license-content {
-    text-align: left;
-}
-
-.license-text {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    line-height: 1.5;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.license-text strong {
-    color: var(--text-secondary);
-}
-
-/* Whitepaper ?? 반응??*/
-
-
-/* Collaboration ?? ???????*/
+/* Collaboration Page Styles */
 
 /* Proposal Section */
 .proposal-section {
     background-color: var(--primary-beige);
     padding: var(--spacing-xl) 0;
     position: relative;
-}
-
-.proposal-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 30% 20%, transparent 47%, rgba(139, 115, 85, 0.04) 47.5%, rgba(139, 115, 85, 0.04) 53%, transparent 53.5%),
-        radial-gradient(circle at 70% 80%, transparent 47%, rgba(212, 165, 116, 0.04) 47.5%, rgba(212, 165, 116, 0.04) 53%, transparent 53.5%);
-    background-size: 450px 450px, 350px 350px;
-    pointer-events: none;
 }
 
 .proposal-content {
@@ -2024,7 +1544,7 @@ section {
 }
 
 .proposal-btn:hover {
-    background-color: #6F5A42;
+    background-color: var(--accent-brown-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3);
 }
@@ -2052,20 +1572,6 @@ section {
     flex-direction: column;
     align-items: center;
     width: 100%;
-}
-
-.names-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 30%, transparent 48%, rgba(139, 115, 85, 0.03) 48.5%, rgba(139, 115, 85, 0.03) 52%, transparent 52.5%),
-        radial-gradient(circle at 80% 70%, transparent 48%, rgba(212, 165, 116, 0.03) 48.5%, rgba(212, 165, 116, 0.03) 52%, transparent 52.5%);
-    background-size: 500px 500px, 400px 400px;
-    pointer-events: none;
 }
 
 .names-grid {
@@ -2196,20 +1702,6 @@ section {
     position: relative;
 }
 
-.partnership-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 75%, transparent 47%, rgba(200, 168, 130, 0.04) 47.5%, rgba(200, 168, 130, 0.04) 53%, transparent 53.5%),
-        radial-gradient(circle at 75% 25%, transparent 47%, rgba(139, 115, 85, 0.04) 47.5%, rgba(139, 115, 85, 0.04) 53%, transparent 53.5%);
-    background-size: 450px 450px, 350px 350px;
-    pointer-events: none;
-}
-
 .partnership-content {
     max-width: 800px;
     margin: 0 auto;
@@ -2233,57 +1725,10 @@ section {
     text-align: center;
 }
 
-/* Invitation Future Section */
-.invitation-future-section {
-    background-color: var(--primary-beige);
-    position: relative;
-}
-
-.invitation-future-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 30% 20%, transparent 48%, rgba(139, 115, 85, 0.03) 48.5%, rgba(139, 115, 85, 0.03) 52%, transparent 52.5%),
-        radial-gradient(circle at 70% 80%, transparent 48%, rgba(212, 165, 116, 0.03) 48.5%, rgba(212, 165, 116, 0.03) 52%, transparent 52.5%);
-    background-size: 400px 400px, 300px 300px;
-    pointer-events: none;
-}
-
-.invitation-content {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.invitation-text {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    text-align: center;
-}
-
 /* Dialogue Section */
 .dialogue-section {
     background-color: var(--white);
     position: relative;
-}
-
-.dialogue-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 40% 60%, transparent 47%, rgba(168, 184, 200, 0.04) 47.5%, rgba(168, 184, 200, 0.04) 53%, transparent 53.5%);
-    background-size: 500px 500px;
-    pointer-events: none;
 }
 
 .contact-content {
@@ -2354,9 +1799,7 @@ section {
     color: var(--accent-gold);
 }
 
-/* Collaboration ?? 반응??*/
-
-
+/* Version Info Section (Whitepaper Page) */
 .version-info {
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -2385,95 +1828,6 @@ section {
     font-style: italic;
 }
 
-/* Idea Sharing Section - ?????�???근방??*/
-.idea-sharing-section {
-    background-color: var(--primary-beige);
-    padding: var(--spacing-xxl) 0;
-    position: relative;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-}
-
-.idea-sharing-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 75%, transparent 47%, rgba(139, 115, 85, 0.03) 47.5%, rgba(139, 115, 85, 0.03) 53%, transparent 53.5%),
-        radial-gradient(circle at 75% 25%, transparent 47%, rgba(212, 165, 116, 0.03) 47.5%, rgba(212, 165, 116, 0.03) 53%, transparent 53.5%);
-    background-size: 450px 450px, 350px 350px;
-    pointer-events: none;
-}
-
-.idea-sharing-wrapper {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-}
-
-.idea-sharing-title {
-    font-family: var(--font-serif);
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 600;
-    color: var(--text-primary);
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
-    letter-spacing: -0.02em;
-    position: relative;
-    line-height: 1.2;
-}
-
-.idea-sharing-title::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 1px;
-    background: var(--wisdom-accent);
-}
-
-.idea-sharing-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.idea-text-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--spacing-xl);
-    background-color: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(212, 165, 116, 0.2);
-}
-
-.idea-main-text {
-    font-family: var(--font-sans);
-    font-size: 1.3rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    text-align: center;
-    margin: 0;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-}
-
 /* ===== 반응형 디자인 (Responsive Design) ===== */
 
 /* 데스크탑-태블릿 중간 사이즈 (1024px 이하) */
@@ -2495,16 +1849,6 @@ section {
         font-size: 0.95rem;
         padding: 0.6rem 0.8rem;
     }
-    
-    .language-toggle {
-        margin-left: var(--spacing-md);
-        padding-left: var(--spacing-md);
-    }
-    
-    .dropdown {
-        min-width: 280px;
-        max-width: 75vw;
-    }
 
     /* Three Projects 간격 더 넓게 */
     .project-label.project-eternal {
@@ -2524,11 +1868,6 @@ section {
     
     .nav-link {
         padding: 0.7rem 0.9rem;
-    }
-    
-    .dropdown {
-        min-width: 300px;
-        max-width: 70vw;
     }
 
     .project-label.project-eternal {
@@ -2568,30 +1907,6 @@ section {
         padding: 0.2rem 0.4rem;
         white-space: nowrap;
         flex-shrink: 0;
-    }
-    
-    /* 모바일에서 드롭다운 완전히 숨기기 */
-    .dropdown {
-        display: none !important;
-    }
-    
-    /* 모바일에서 드롭다운 화살표 숨기기 */
-    .nav-link.has-dropdown::before {
-        display: none;
-    }
-    
-    .language-toggle {
-        margin-left: var(--spacing-xs);
-        padding-left: var(--spacing-xs);
-        padding: 0.2rem var(--spacing-xs);
-        flex-shrink: 0;
-        min-width: auto;
-    }
-    
-    .lang-btn {
-        font-size: 0.65rem;
-        padding: 0.15rem 0.25rem;
-        min-width: auto;
     }
     
     /* 홈페이지 섹션 간격 모바일 조정 */
@@ -2662,25 +1977,6 @@ section {
         padding: 0.15rem 0.3rem;
     }
     
-    /* 모바일에서 드롭다운 완전히 숨기기 */
-    .dropdown {
-        display: none !important;
-    }
-    
-    /* 모바일에서 드롭다운 화살표 숨기기 */
-    .nav-link.has-dropdown::before {
-        display: none;
-    }
-    
-    .language-toggle {
-        padding: 0.15rem 0.25rem;
-    }
-    
-    .lang-btn {
-        font-size: 0.6rem;
-        padding: 0.1rem 0.2rem;
-    }
-    
     /* 모바일 홈페이지 섹션 간격 최적화 */
     .era-questions {
         padding: var(--spacing-xxl) 0;
@@ -2713,16 +2009,6 @@ section {
         font-size: 0.6rem;
         padding: 0.1rem 0.25rem;
     }
-    
-    /* 모바일에서 드롭다운 완전히 숨기기 */
-    .dropdown {
-        display: none !important;
-    }
-    
-    /* 모바일에서 드롭다운 화살표 숨기기 */
-    .nav-link.has-dropdown::before {
-        display: none;
-    }
 }
 
 /* ===== Three Projects Section ===== */
@@ -2730,19 +2016,6 @@ section {
     background-color: var(--white);
     position: relative;
     padding: var(--spacing-xxl) 0;
-}
-
-.three-projects-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 40% 60%, transparent 47%, rgba(139, 115, 85, 0.02) 47.5%, rgba(139, 115, 85, 0.02) 53%, transparent 53.5%);
-    background-size: 600px 600px;
-    pointer-events: none;
 }
 
 .projects-harmony-wrapper {
@@ -2904,36 +2177,6 @@ section {
     
     .project-label.project-empyrean {
         right: 8%;
-    }
-}
-
-/* 화면이 좁을 때 드롭다운 위치 조정 */
-@media (max-width: 1200px) {
-    .dropdown {
-        left: 0;
-        transform: translateX(0) translateY(-10px);
-        min-width: 280px;
-        max-width: 60vw;
-    }
-    
-    .nav-item:hover .dropdown {
-        transform: translateX(0) translateY(0);
-    }
-}
-
-@media (max-width: 1024px) {
-    .dropdown {
-        left: -20px;
-        min-width: 260px;
-        max-width: 65vw;
-    }
-}
-
-@media (max-width: 900px) {
-    .dropdown {
-        left: -40px;
-        min-width: 240px;
-        max-width: 70vw;
     }
 }
 
@@ -3132,33 +2375,110 @@ section {
         padding: 0 var(--spacing-sm);
     }
     
+    /* Index 페이지 - URNAVA Introduction 모바일 최적화 */
+    .urnava-meaning {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .urnava-meaning h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .urnava-meaning p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+    
+    .leah-meaning h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .leah-meaning > p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .vision-box {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-top: var(--spacing-xl);
+        border-radius: 12px;
+    }
+    
+    .vision-text {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+    
+    /* Vision 페이지 - System Integration (Harmonic Synthesis) 모바일 최적화 */
+    .system-integration {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-top: var(--spacing-xl);
+        border-radius: 12px;
+    }
+    
+    .system-integration h3 {
+        font-size: 1.4rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .system-integration p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+    
     /* Proposal Section 모바일 */
     .proposal-section {
         padding: var(--spacing-lg) 0;
     }
     
     .proposal-content {
-        padding: 0 var(--spacing-md);
+        padding: 0 var(--spacing-sm);
     }
     
     .proposal-text {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md) var(--spacing-sm);
         margin-bottom: var(--spacing-lg);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
     }
     
     .proposal-intro {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         margin-bottom: var(--spacing-md);
+        line-height: 1.5;
     }
     
     .proposal-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin-bottom: var(--spacing-md);
+        line-height: 1.75;
+        text-align: left;
+    }
+    
+    .proposal-pillars {
+        text-align: left;
+        margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .proposal-pillars li {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: var(--spacing-xs);
     }
     
     .proposal-btn {
-        padding: var(--spacing-sm) var(--spacing-lg);
-        font-size: 1rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 320px;
     }
 
     /* Collaboration 페이지 eye 이미지 모바일 */
@@ -3239,6 +2559,79 @@ section {
         padding: var(--spacing-sm);
         margin: 0 auto;
     }
+    
+    /* Proposal Section 극소형 화면 */
+    .proposal-text {
+        padding: var(--spacing-sm);
+        border-radius: 8px;
+    }
+    
+    .proposal-intro {
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+    
+    .proposal-description {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+    
+    .proposal-pillars li {
+        font-size: 0.85rem;
+    }
+    
+    .proposal-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem var(--spacing-sm);
+    }
+    
+    /* Index 페이지 - URNAVA Introduction 극소형 화면 */
+    .urnava-meaning {
+        padding: var(--spacing-sm);
+    }
+    
+    .urnava-meaning h3 {
+        font-size: 1.3rem;
+    }
+    
+    .urnava-meaning p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+    
+    .leah-meaning h3 {
+        font-size: 1.3rem;
+    }
+    
+    .leah-meaning > p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+    
+    .vision-box {
+        padding: var(--spacing-sm);
+        border-radius: 8px;
+    }
+    
+    .vision-text {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+    
+    /* Vision 페이지 - System Integration 극소형 화면 */
+    .system-integration {
+        padding: var(--spacing-sm);
+        border-radius: 8px;
+    }
+    
+    .system-integration h3 {
+        font-size: 1.25rem;
+    }
+    
+    .system-integration p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
 }
 
 .whitepaper-version {
@@ -3249,4 +2642,86 @@ section {
     margin-bottom: 0.2em;
     font-weight: 400;
     letter-spacing: 0.2px;
+}
+
+/* ===== 이스터에그 메시지 ===== */
+.easter-egg-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: var(--text-primary);
+    padding: 2rem;
+    border-radius: 12px;
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    z-index: 10000;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #E8E2DB;
+    opacity: 0;
+    max-width: 400px;
+    line-height: 1.4;
+    transition: opacity 0.5s ease-out;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.easter-egg-message.show {
+    opacity: 1;
+}
+
+/* ===== JavaScript 애니메이션 클래스 ===== */
+.animate-in {
+    animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.loaded .hero-title,
+body.loaded .hero-subtitle {
+    animation-play-state: running;
+}
+
+.navbar {
+    transition: transform 0.3s ease;
+}
+
+/* 이스터에그 메시지 반응형 */
+@media (max-width: 768px) {
+    .easter-egg-message {
+        font-size: 0.85rem;
+        padding: 1.6rem;
+        letter-spacing: 0.35px;
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 480px) {
+    .easter-egg-message {
+        font-size: 0.75rem;
+        padding: 1.4rem;
+        letter-spacing: 0.25px;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 320px) {
+    .easter-egg-message {
+        font-size: 0.7rem;
+        padding: 1.2rem;
+        letter-spacing: 0.2px;
+        max-width: 280px;
+    }
 }
