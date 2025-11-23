@@ -767,6 +767,7 @@ section > * {
     align-items: center;
     flex-wrap: nowrap;
     white-space: nowrap;
+    gap: 2px;
 }
 
 .footer-links a {
@@ -775,6 +776,7 @@ section > * {
     font-size: 0.9rem;
     transition: color var(--transition-normal);
     white-space: nowrap;
+    padding: 0 4px;
 }
 
 .footer-links a:hover {
@@ -784,6 +786,7 @@ section > * {
 .separator {
     margin: 0 var(--spacing-sm);
     color: var(--text-light);
+    flex-shrink: 0;
 }
 
 .footer-contact {
@@ -2029,6 +2032,18 @@ section > * {
     }
 }
 
+/* 중간 모바일 (481px~600px 사이) */
+@media (max-width: 600px) and (min-width: 481px) {
+    .footer-links a {
+        font-size: 0.85rem;
+        padding: 0 8px;
+    }
+    
+    .separator {
+        margin: 0 8px;
+    }
+}
+
 @media (max-width: 480px) {
     .navbar {
         padding: 0 var(--spacing-xs);
@@ -2548,6 +2563,17 @@ section > * {
 
 /* 모바일 사이즈 추가 반응형 */
 @media (max-width: 480px) {
+    /* Footer 작은 모바일 최적화 */
+    .footer-links a {
+        font-size: clamp(0.72rem, 2.8vw, 0.82rem);
+        padding: 0 4px;
+    }
+    
+    .separator {
+        margin: 0 4px;
+        font-size: 0.7rem;
+    }
+    
     /* Whitepaper 모바일 */
     .whitepaper-card {
         padding: var(--spacing-md);
@@ -2594,16 +2620,17 @@ section > * {
     .footer-links {
         flex-wrap: nowrap;
         margin-bottom: var(--spacing-sm);
+        gap: 0;
     }
     
     .footer-links a {
-        font-size: 0.75rem;
-        padding: 0 1px;
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        padding: 0 6px;
     }
     
     .separator {
-        margin: 0 3px;
-        font-size: 0.7rem;
+        margin: 0 6px;
+        font-size: 0.75rem;
     }
     
     /* Vision 페이지 연결선 및 번호 모바일 조정 */
@@ -2842,10 +2869,13 @@ section > * {
     
     /* Footer 초소형 화면 최적화 */
     .footer-links a {
-        font-size: 0.65rem;
+        font-size: clamp(0.65rem, 3vw, 0.75rem);
+        padding: 0 3px;
     }
+    
     .separator {
-        margin: 0 2px;
+        margin: 0 3px;
+        font-size: 0.65rem;
     }
     
     .whitepaper-card {
