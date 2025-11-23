@@ -280,13 +280,10 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: var(--spacing-md);
-    letter-spacing: 0.01em;
-    line-height: 1.1;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
     animation: fadeInUp 1.5s ease-out;
-    text-shadow: 
-        0 2px 8px rgba(214, 168, 113, 0.15),
-        0 4px 16px rgba(202, 166, 131, 0.1),
-        0 1px 2px rgba(0, 0, 0, 0.08);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: relative;
 }
 
@@ -296,17 +293,10 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        var(--accent-gold), 
-        var(--wisdom-accent), 
-        var(--accent-gold),
-        transparent);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--wisdom-accent), transparent);
     opacity: 0;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(214, 168, 113, 0.3);
     animation: accentFadeIn 1.5s ease-out 1s forwards;
 }
 
@@ -318,11 +308,9 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     font-size: clamp(1rem, 2.3vw, 1.3rem);
     color: var(--text-secondary);
     font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     animation: fadeInUp 1.5s ease-out 0.4s both;
     font-style: italic;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    opacity: 0.95;
 }
 
 /* ===== 공통 섹션 스타일 ===== */
