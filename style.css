@@ -2015,6 +2015,11 @@ section > * {
         flex-wrap: nowrap;
         overflow: visible;
     }
+
+    /* 모바일에서 푸터 워드마크 로고 크기 축소 */
+    .footer-wordmark {
+        height: 27px;
+    }
     
     /* 중앙 로고 네비게이션 - 모바일에서는 간격만 축소 */
     .nav-center-layout {
