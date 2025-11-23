@@ -53,16 +53,16 @@
 :root {
     /* === 색상 팔레트 === */
     /* 주요 베이지 색상 */
-    --primary-beige: #F7F5F2;
-    --secondary-beige: #EDE7DD;
-    --tertiary-beige: #DCCBB8;
+    --primary-beige: #F7F3EF;
+    --secondary-beige: #EDE5DA;
+    --tertiary-beige: #DCC9B5;
     
     /* 액센트 색상 */
-    --accent-gold: #D6A873;
+    --accent-gold: #D6A771;
     --accent-brown: #8F7558;
     --accent-brown-hover: #6F5A42;
-    --accent-gold-hover: #C19660;
-    --wisdom-accent: #CAA885;
+    --accent-gold-hover: #C19560;
+    --wisdom-accent: #CAA683;
     --connection-blue: #A8B8C8;
     
     /* 텍스트 색상 */
