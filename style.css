@@ -775,6 +775,19 @@ section > * {
     text-align: center;
 }
 
+.footer-brand {
+    margin-top: calc(-1.2 * var(--spacing-md));
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-wordmark {
+    height: 54px;
+    width: auto;
+    display: inline-block;
+    opacity: 0.9;
+    vertical-align: middle;
+}
+
 .footer-links {
     margin-bottom: var(--spacing-md);
     display: flex;
