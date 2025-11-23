@@ -189,7 +189,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .page-title {
     width: auto;
     transition: opacity var(--transition-normal), transform var(--transition-normal), filter var(--transition-normal);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    margin-top: 10px;
+    margin-top: 6px;
 }
 
 .nav-menu {
@@ -1944,7 +1944,7 @@ section > * {
     
     .nav-logo .logo-img {
         height: 65px;
-        margin-top: 12px;
+        margin-top: 6px;
     }
     
     .nav-menu {
