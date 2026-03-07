@@ -1,0 +1,3128 @@
+/* ===== URNAVA 웹사이트 CSS - 최종 최적화 버전 ===== */
+
+/* ===== 로컬 폰트 로드 ===== */
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('./fonts/libre-baskerville-v16-latin/libre-baskerville-v16-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('./fonts/libre-baskerville-v16-latin/libre-baskerville-v16-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-300.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/inter-v19-latin/inter-v19-latin-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===== CSS 변수 시스템 ===== */
+:root {
+    /* === 색상 팔레트 === */
+    /* 주요 베이지 색상 */
+    --primary-beige: #F7F3EF;
+    --secondary-beige: #EDE5DA;
+    --tertiary-beige: #DCC9B5;
+
+    /* 액센트 색상 */
+    --accent-gold: #D6A771;
+    --accent-brown: #8F7558;
+    --accent-brown-hover: #6F5A42;
+    --accent-gold-hover: #C19560;
+    --wisdom-accent: #CAA683;
+    --connection-blue: #A8B8C8;
+
+    /* 텍스트 색상 */
+    --text-primary: #2C2C2C;
+    --text-secondary: #6B6B6B;
+    --text-light: #707070;
+
+    /* 기본 색상 */
+    --white: #FFFFFF;
+
+    /* === 타이포그래피 === */
+    --font-serif: 'Libre Baskerville', 'Georgia', 'Times New Roman', 'Times', serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', Arial, sans-serif;
+
+    /* === 간격 시스템 === */
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 1rem;
+    /* 16px */
+    --spacing-md: 2rem;
+    /* 32px */
+    --spacing-lg: 3rem;
+    /* 48px */
+    --spacing-xl: 4rem;
+    /* 64px */
+    --spacing-xxl: 6rem;
+    /* 96px */
+
+    /* === 레이아웃 === */
+    --max-width: 1200px;
+    --nav-height: 80px;
+    --border-radius: 12px;
+    --border-radius-lg: 20px;
+
+    /* === 애니메이션 === */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* === 그림자 === */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 6px 25px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --shadow-nav: 0 2px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+/* ===== 기본 리셋 & 설정 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--primary-beige);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-variant-ligatures: none;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.section-title,
+.page-title {
+    font-family: var(--font-serif);
+}
+
+/* ===== 메인 컨테이너 ===== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* ===== 네비게이션 ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(247, 245, 242, 0.98) 0%, rgba(237, 231, 221, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+    z-index: 1000;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-nav);
+    padding: 0 var(--spacing-md);
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(212, 165, 116, 0.05) 25%,
+            rgba(139, 115, 85, 0.05) 75%,
+            transparent 100%);
+    pointer-events: none;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.nav-logo {
+    flex-shrink: 0;
+}
+
+.nav-logo .logo-img {
+    height: 76px;
+    width: auto;
+    transition: opacity var(--transition-normal), transform var(--transition-normal), filter var(--transition-normal);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    margin-top: 6px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    position: relative;
+}
+
+/* 중앙 로고형 네비게이션 레이아웃 */
+.nav-center-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.nav-links-left,
+.nav-links-right {
+    flex: 1;
+}
+
+.nav-links-left {
+    justify-content: flex-end;
+}
+
+.nav-links-right {
+    justify-content: flex-start;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-fast);
+    position: relative;
+    padding: 0.8rem 1rem;
+    display: block;
+}
+
+.nav-link:hover {
+    color: var(--accent-brown);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-brown));
+    transition: all var(--transition-fast);
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link.active {
+    color: var(--accent-brown);
+}
+
+/* 드롭다운 메뉴 */
+/* ===== 히어로 섹션(Hero Section) ===== */
+/* 메인 랜딩 페이지 "LEAH, Wake up." 섹션 */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 50% 10%,
+            /* 광원: 로고 바로 위쪽, 거의 배경에 가까운 크림 톤 */
+            #FFF9F3 0%,
+            #F8F1E7 14%,
+            #F2E4D5 26%,
+            #EAD7C4 38%,
+            /* 중간 영역: 기본 베이지와 부드럽게 이어지는 톤 */
+            #E2CBB6 50%,
+            #D9C0AB 62%,
+            /* 바깥 영역: 배경보다 아주 살짝만 진한 베이지 */
+            #D0B59F 78%,
+            #C6AA94 90%,
+            #BCA089 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 55px;
+}
+
+.hero-container {
+    text-align: center;
+    max-width: 900px;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    animation: fadeInUp 1.5s ease-out;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--wisdom-accent), transparent);
+    opacity: 0;
+    animation: accentFadeIn 1.5s ease-out 1s forwards;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+.hero-subtitle p {
+    font-size: clamp(1rem, 2.3vw, 1.3rem);
+    color: var(--text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    animation: fadeInUp 1.5s ease-out 0.4s both;
+    font-style: italic;
+}
+
+/* ===== 공통 섹션 스타일 ===== */
+/* 모든 섹션에서 사용하는 기본 스타일 */
+section {
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section>* {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: -0.02em;
+    position: relative;
+    line-height: 1.2;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--wisdom-accent);
+}
+
+/* ===== Era Questions 섹션 ===== */
+/* "The Question of Our Era" - 시대의 질문 리스트 섹션 */
+.era-questions {
+    background-color: var(--white);
+    position: relative;
+}
+
+.large-text {
+    font-size: clamp(1.4rem, 3.2vw, 1.7rem);
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.questions-list {
+    margin: calc(var(--spacing-xl) * 1.5) 0;
+    display: grid;
+    gap: calc(var(--spacing-md) * 1.5);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.question-item {
+    background-color: var(--primary-beige);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-gold);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+}
+
+.question-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.question-icon {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--accent-brown);
+    font-weight: 600;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-item p {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 400;
+    flex: 1;
+}
+
+.genesis-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.7;
+    margin-top: calc(var(--spacing-lg) * 1.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+}
+
+/* URNAVA Introduction Section - 새로운 지혜 소개 + 핵심 가치 */
+.urnava-introduction {
+    background-color: var(--secondary-beige);
+    position: relative;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.urnava-meaning {
+    position: relative;
+    margin-bottom: calc(var(--spacing-xl) * 1.8);
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.urnava-introduction .wisdom-accent {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent), var(--accent-gold));
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.urnava-meaning h3,
+.leah-meaning h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    font-weight: 600;
+}
+
+.urnava-meaning p,
+.leah-meaning p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.7;
+}
+
+.leah-meaning {
+    margin-bottom: calc(var(--spacing-xl) * 1.5);
+}
+
+.leah-values {
+    display: flex;
+    flex-direction: column;
+}
+
+.values-top-row {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.harmony-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-sm);
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent));
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.value-letter {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-brown);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.value-word {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.harmony-item {
+    width: 100%;
+    max-width: none;
+    padding: var(--spacing-xl);
+}
+
+.harmony-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+    font-style: italic;
+}
+
+.vision-box {
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    margin-top: calc(var(--spacing-xl) * 1.5);
+}
+
+.vision-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    text-align: center;
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.vision-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: var(--spacing-sm) 0;
+}
+
+.vision-separator .tri {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid var(--accent-brown);
+    opacity: 0.9;
+}
+
+.vision-separator .tri:nth-child(2) {
+    border-bottom-color: var(--accent-gold);
+}
+
+.vision-separator .tri:nth-child(3) {
+    border-bottom-color: var(--wisdom-accent);
+}
+
+/* Invitation Section - 미지의 세계로의 초대 + 핵심 행동강령 */
+.invitation-section {
+    background-color: var(--primary-beige);
+    position: relative;
+}
+
+.invitation-section .section-title {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+}
+
+.invitation-content {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.connection-symbol {
+    margin-bottom: calc(var(--spacing-xl) * 1.5);
+    display: flex;
+    justify-content: center;
+}
+
+.connection-dots {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-brown);
+    position: relative;
+    opacity: 0.7;
+    animation: connectionPulse 3s infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 1s;
+    background: var(--accent-gold);
+}
+
+.dot:nth-child(3) {
+    animation-delay: 2s;
+    background: var(--wisdom-accent);
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 1px;
+    background: var(--accent-brown);
+    opacity: 0.5;
+}
+
+.dot:last-child::before {
+    display: none;
+}
+
+.invitation-text,
+.journey-text {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: calc(var(--spacing-md) * 1.8);
+}
+
+/* CTA 버튼들 - 행동유도버튼 */
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: calc(var(--spacing-xl) * 1.8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    display: block;
+    text-decoration: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: all var(--transition-normal);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn.primary {
+    background-color: var(--accent-brown);
+    color: var(--white);
+    border: 2px solid var(--accent-brown);
+}
+
+.cta-btn.primary:hover {
+    background-color: var(--accent-brown-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(139, 115, 85, 0.3);
+}
+
+.cta-btn.secondary {
+    background-color: var(--white);
+    color: var(--accent-brown);
+    border: 2px solid var(--accent-brown);
+}
+
+.cta-btn.secondary:hover {
+    background-color: var(--primary-beige);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(139, 115, 85, 0.2);
+}
+
+.cta-btn.tertiary {
+    background-color: var(--accent-gold);
+    color: var(--text-primary);
+    border: 2px solid var(--accent-gold);
+}
+
+.cta-btn.tertiary:hover {
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 165, 116, 0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-primary);
+    color: var(--primary-beige);
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xs);
+    text-align: center;
+}
+
+.footer-brand {
+    margin-top: calc(-1.2 * var(--spacing-md));
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-wordmark {
+    height: 40px;
+    width: auto;
+    display: inline-block;
+    opacity: 0.9;
+    vertical-align: middle;
+}
+
+.footer-links {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 2px;
+}
+
+.footer-links a {
+    color: var(--primary-beige);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-normal);
+    white-space: nowrap;
+    padding: 0 4px;
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+}
+
+.separator {
+    margin: 0 var(--spacing-sm);
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.footer-contact {
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-contact p {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-contact a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.footer-contact a:hover {
+    color: var(--primary-beige);
+}
+
+/* Social Icons */
+.social-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+    opacity: 0.8;
+}
+
+.footer-legal {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.privacy-notice {
+    margin-top: var(--spacing-xs);
+}
+
+/* Easter Egg Stars */
+.easter-eggs {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+.star {
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    filter: brightness(1.2);
+}
+
+.star:hover {
+    opacity: 0.9;
+    transform: scale(1.3);
+}
+
+/* ===== Animation System ===== */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Right Animation */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 0.15;
+        transform: translateX(0);
+    }
+}
+
+/* Connection Pulse Animation */
+@keyframes connectionPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Accent Fade In Animation */
+@keyframes accentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scaleX(0);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/* ===== Philosophy Pages Styles ===== */
+
+/* Active Navigation Link */
+.nav-link.active {
+    color: var(--accent-brown);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Philosophy Hero Section */
+.philosophy-hero {
+    padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary-beige) 0%, var(--secondary-beige) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.philosophy-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+    font-size: clamp(1rem, 2.3vw, 1.3rem);
+    color: var(--text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Philosophy Introduction */
+.philosophy-intro {
+    background-color: var(--white);
+    position: relative;
+    padding: var(--spacing-md) 0 var(--spacing-xxl);
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-style: italic;
+}
+
+.philosophical-questions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.question-card {
+    background-color: var(--primary-beige);
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    border-left: 4px solid var(--accent-gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.question-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.question-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.exploration-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    max-width: 700px;
+    margin: var(--spacing-xl) auto 0;
+    line-height: 1.7;
+}
+
+/* LEAH Philosophies Section */
+.leah-philosophies {
+    background-color: var(--secondary-beige);
+    position: relative;
+}
+
+.philosophies-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+/* 5대 철학 연결선 (Flow Visualization) */
+.philosophies-grid::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: calc(var(--spacing-lg) + 25px);
+    width: 2px;
+    background: linear-gradient(to bottom,
+            rgba(214, 167, 113, 0) 0%,
+            rgba(214, 167, 113, 0.3) 15%,
+            rgba(214, 167, 113, 0.3) 85%,
+            rgba(214, 167, 113, 0) 100%);
+    z-index: 0;
+}
+
+.philosophy-item {
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+.philosophy-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.philosophy-number {
+    position: absolute;
+    top: -15px;
+    left: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--accent-brown), var(--accent-gold));
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.philosophy-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+    font-weight: 600;
+}
+
+.philosophy-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+}
+
+.philosophy-details {
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--tertiary-beige);
+}
+
+.philosophy-details p {
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* Persona System Section */
+.persona-system {
+    background-color: var(--primary-beige);
+    position: relative;
+}
+
+.personas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.persona-card {
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.persona-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent), var(--accent-brown));
+}
+
+.persona-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+.persona-icon {
+    width: 120px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    background: linear-gradient(135deg, var(--accent-brown), var(--accent-gold));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.persona-letter {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.persona-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.persona-domain {
+    font-size: 1.1rem;
+    color: var(--accent-brown);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+}
+
+.persona-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.persona-traits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.trait {
+    background-color: var(--tertiary-beige);
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.system-integration {
+    margin-top: var(--spacing-xxl);
+    text-align: center;
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.system-integration h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.system-integration p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Integration Vision Section */
+.integration-vision {
+    background-color: var(--white);
+    position: relative;
+}
+
+.vision-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xxl);
+    position: relative;
+    z-index: 1;
+}
+
+.integration-text {
+    flex: 1;
+}
+
+.integration-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.integration-text p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.integration-diagram {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.triangle-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-xl) auto;
+}
+
+.triangle-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+}
+
+.reuleaux-triangle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 3px solid var(--accent-brown);
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-beige), var(--secondary-beige));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.project-vertex {
+    position: absolute;
+    text-align: center;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    min-width: auto;
+    z-index: 2;
+}
+
+.project-vertex.leah {
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.project-vertex.eternal {
+    bottom: -15px;
+    left: 15%;
+    transform: translateX(-50%);
+}
+
+.project-vertex.empyrean {
+    bottom: -15px;
+    right: 15%;
+    transform: translateX(50%);
+}
+
+.project-vertex span {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+    display: block;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.project-vertex p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+    margin-top: 0.3rem;
+    font-style: italic;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Deeper Exploration Section */
+.deeper-exploration {
+    background-color: var(--secondary-beige);
+    position: relative;
+}
+
+.exploration-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.exploration-content h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+    text-align: center;
+}
+
+.exploration-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.exploration-content p:last-of-type {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ===== Responsive Breakpoints for Persona Grid ===== */
+
+/* Whitepapers Section */
+.whitepapers-section {
+    background-color: var(--white);
+    position: relative;
+}
+
+.whitepapers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+}
+
+.whitepaper-card {
+    background-color: var(--primary-beige);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.whitepaper-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.whitepaper-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.whitepaper-header h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0;
+}
+
+.whitepaper-content {
+    flex: 1;
+    margin-bottom: var(--spacing-lg);
+}
+
+.whitepaper-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.whitepaper-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.whitepaper-features li {
+    color: var(--text-primary);
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+    position: relative;
+    padding-left: var(--spacing-md);
+}
+
+.whitepaper-features li:before {
+    content: '◆';
+    color: var(--accent-gold);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.whitepaper-features li:last-child {
+    border-bottom: none;
+}
+
+.whitepaper-footer {
+    margin-top: auto;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    width: 100%;
+    justify-content: center;
+}
+
+.download-btn.primary {
+    background-color: var(--accent-brown);
+    color: var(--white);
+    border: 2px solid var(--accent-brown);
+}
+
+.download-btn.primary:hover {
+    background-color: var(--accent-brown-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 115, 85, 0.3);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+
+/* Whitepaper Page - Responsive Styles */
+
+/* Collaboration Page Styles */
+
+/* Proposal Section */
+.proposal-section {
+    background-color: var(--primary-beige);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.proposal-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.proposal-text {
+    margin-bottom: var(--spacing-xl);
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    position: relative;
+}
+
+.proposal-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-brown), var(--accent-gold));
+    border-radius: 16px 16px 0 0;
+}
+
+.proposal-intro {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-serif);
+    text-align: center;
+}
+
+.proposal-description {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    font-style: normal;
+    text-align: left;
+}
+
+.proposal-description:has(+ .proposal-pillars) {
+    margin-bottom: var(--spacing-sm);
+}
+
+.proposal-description:last-of-type {
+    margin-bottom: 0;
+}
+
+.proposal-pillars {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 2rem;
+    text-align: left;
+}
+
+.proposal-pillars li {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: calc(var(--spacing-sm) * 0.5);
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.proposal-pillars li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-brown);
+    font-weight: 600;
+}
+
+.proposal-pillars li:last-child {
+    margin-bottom: 0;
+}
+
+.proposal-action {
+    margin-top: var(--spacing-lg);
+}
+
+.proposal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--accent-brown);
+    color: var(--white);
+    text-decoration: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border: 2px solid var(--accent-brown);
+    box-shadow: 0 4px 15px rgba(139, 115, 85, 0.2);
+}
+
+.proposal-btn:hover {
+    background-color: var(--accent-brown-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3);
+}
+
+.btn-text {
+    font-family: var(--font-sans);
+}
+
+/* .btn-icon 는 L1506에서 통합 선언 */
+
+/* Names Section */
+.names-section {
+    background-color: var(--white);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.names-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.names-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
+    position: relative;
+    z-index: 1;
+}
+
+.name-card {
+    background-color: var(--primary-beige);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.name-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.name-header h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.pronunciation {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.name-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.meaning-section h4,
+.pronunciation-section h4 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--accent-brown);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meaning-section p,
+.pronunciation-section p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xs);
+}
+
+.translation {
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.ipa {
+    font-family: 'Times New Roman', serif;
+    color: var(--accent-brown);
+    font-weight: 500;
+}
+
+.symbolic-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--spacing-xl) auto;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+}
+
+.urnava-symbol {
+    text-align: center;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 16px;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.symbol-img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto var(--spacing-lg) auto;
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
+    display: block;
+}
+
+.symbol-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.5;
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Partnership Section */
+.partnership-section {
+    background-color: var(--secondary-beige);
+    position: relative;
+}
+
+.partnership-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.partnership-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.partnership-call {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-top: var(--spacing-lg);
+    text-align: center;
+}
+
+/* Dialogue Section */
+.dialogue-section {
+    background-color: var(--white);
+    position: relative;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-intro {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.contact-item {
+    background-color: var(--primary-beige);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-icon-img {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.contact-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-link {
+    color: var(--accent-brown);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-gold);
+}
+
+/* Version Info Section (Whitepaper Page) */
+.version-info {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background-color: var(--secondary-beige);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 165, 116, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* .version-text 는 아래(L1921)에서 통합 선언 */
+
+.date-highlight {
+    color: var(--accent-brown);
+}
+
+.branding-notice {
+    padding-top: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    border-top: 1px solid rgba(212, 165, 116, 0.35);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.branding-notice a {
+    color: var(--accent-brown);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.branding-notice a:hover {
+    color: var(--accent-gold);
+}
+
+.version-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0 0 var(--spacing-md) 0;
+    line-height: 1.5;
+}
+
+.version-text strong {
+    color: var(--accent-brown);
+    font-weight: 600;
+}
+
+.version-text em {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ===== 반응형 디자인 (Responsive Design) ===== */
+
+/* 데스크탑-태블릿 중간 사이즈 (1024px 이하) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-container {
+        height: 70px;
+    }
+
+    .nav-logo .logo-img {
+        height: 65px;
+        margin-top: 6px;
+    }
+
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+
+    .nav-center-layout {
+        gap: var(--spacing-md);
+    }
+
+    .nav-links {
+        gap: var(--spacing-md);
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    /* Three Projects 간격 더 넓게 */
+    .project-label.project-eternal {
+        left: 8%;
+    }
+
+    .project-label.project-empyrean {
+        right: 8%;
+    }
+}
+
+/* 데스크탑에서 중간 크기 (1200px 이하) */
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+
+    .nav-link {
+        padding: 0.7rem 0.9rem;
+    }
+
+    .project-label.project-eternal {
+        left: 15%;
+    }
+
+    .project-label.project-empyrean {
+        right: 15%;
+    }
+}
+
+/* 태블릿 사이즈 (768px 이하) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 var(--spacing-xs);
+    }
+
+    .nav-container {
+        padding: 0;
+        height: 45px;
+        max-width: 100%;
+    }
+
+    .nav-logo .logo-img {
+        height: 44px;
+        margin-top: 6px;
+    }
+
+    .nav-menu {
+        gap: var(--spacing-xs);
+        flex-wrap: nowrap;
+        overflow: visible;
+    }
+
+    /* 모바일에서 푸터 워드마크 로고 크기 축소 */
+    .footer-wordmark {
+        height: 27px;
+    }
+
+    /* 중앙 로고 네비게이션 - 모바일에서는 간격만 축소 */
+    .nav-center-layout {
+        gap: var(--spacing-xs);
+    }
+
+    .nav-links {
+        gap: var(--spacing-xs);
+    }
+
+    .nav-link {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* 홈페이지 섹션 간격 모바일 조정 */
+    .era-questions {
+        padding: calc(var(--spacing-xxl) * 1.2) 0;
+        margin-bottom: 0;
+    }
+
+    .urnava-introduction {
+        padding: calc(var(--spacing-xxl) * 1.2) 0;
+        margin: 0;
+    }
+
+    .invitation-section {
+        padding: calc(var(--spacing-xxl) * 1.2) 0;
+        margin-top: 0;
+    }
+
+    /* Collaboration 페이지 태블릿 최적화 */
+    .names-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
+    }
+
+    .name-card {
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-xs);
+    }
+
+    .symbol-img {
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto var(--spacing-md) auto;
+    }
+
+    .symbolic-element {
+        margin: var(--spacing-lg) auto;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .symbol-description {
+        max-width: 90%;
+        padding: var(--spacing-md);
+    }
+}
+
+/* 중간 모바일 (481px~600px 사이) */
+@media (max-width: 600px) and (min-width: 481px) {
+    .footer-links a {
+        font-size: 0.85rem;
+        padding: 0 8px;
+    }
+
+    .separator {
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 var(--spacing-xs);
+    }
+
+    .nav-container {
+        height: 40px;
+    }
+
+    .nav-logo .logo-img {
+        height: 36px;
+        margin-top: 6px;
+    }
+
+    .nav-menu {
+        gap: 0.25rem;
+    }
+
+    .nav-link {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.3rem;
+    }
+
+    /* 모바일 홈페이지 섹션 간격 최적화 */
+    .era-questions {
+        padding: var(--spacing-xxl) 0;
+        margin-bottom: 0;
+    }
+
+    .urnava-introduction {
+        padding: var(--spacing-xxl) 0;
+        margin: 0;
+    }
+
+    .invitation-section {
+        padding: var(--spacing-xxl) 0;
+        margin-top: 0;
+    }
+}
+
+/* 아주 작은 모바일 (320px 이하) */
+@media (max-width: 320px) {
+    .nav-container {
+        height: 35px;
+    }
+
+    .nav-logo .logo-img {
+        height: 30px;
+        margin-top: 5px;
+    }
+
+    .nav-link {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.25rem;
+    }
+}
+
+/* ===== Three Projects Section ===== */
+.three-projects-section {
+    background-color: var(--white);
+    position: relative;
+    padding: var(--spacing-xxl) 0;
+}
+
+.projects-harmony-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xxl);
+}
+
+.harmony-description {
+    flex: 1;
+    max-width: 500px;
+}
+
+.harmony-description h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.harmony-description p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+.projects-visual-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.central-triangle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.triangle-img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+}
+
+.triangle-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -22%);
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.triangle-center-text::before {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.28) 0%, rgba(212, 165, 116, 0.16) 40%, rgba(212, 165, 116, 0) 70%);
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-text-line1,
+.center-text-line2 {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.center-text-line1 {
+    font-size: 0.9rem;
+}
+
+.center-text-line2 {
+    font-size: 0.9rem;
+}
+
+.projects-labels-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.project-label {
+    position: absolute;
+    text-align: center;
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    transition: none;
+}
+
+.project-label.project-leah {
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.project-label.project-eternal {
+    bottom: -20px;
+    left: 18%;
+    transform: translateX(-50%);
+}
+
+.project-label.project-empyrean {
+    bottom: -20px;
+    right: 18%;
+    transform: translateX(50%);
+}
+
+/* 넓은 데스크탑 화면 (1400px 이상) - 라벨을 삼각형 가까이 */
+@media (min-width: 1400px) {
+    .project-label.project-eternal {
+        left: 22%;
+        bottom: -15px;
+    }
+
+    .project-label.project-empyrean {
+        right: 22%;
+        bottom: -15px;
+    }
+}
+
+.project-name {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+    display: block;
+}
+
+.project-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+    margin-top: 0.3rem;
+    font-style: italic;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* 데스크탑 좁은 화면 (900px~1024px) - 라벨 간격 더 넓게 */
+@media (max-width: 1024px) and (min-width: 901px) {
+    .project-label.project-eternal {
+        left: 5%;
+    }
+
+    .project-label.project-empyrean {
+        right: 5%;
+    }
+}
+
+/* 중간 화면 (769px~900px) - 라벨 간격 적당히 */
+@media (max-width: 900px) and (min-width: 769px) {
+    .project-label.project-eternal {
+        left: 3%;
+    }
+
+    .project-label.project-empyrean {
+        right: 3%;
+    }
+}
+
+/* 데스크탑 중간 크기 (1100px~1200px) - 라벨 간격 조금 넓게 */
+@media (max-width: 1200px) and (min-width: 1101px) {
+    .project-label.project-eternal {
+        left: 15%;
+    }
+
+    .project-label.project-empyrean {
+        right: 15%;
+    }
+}
+
+/* 데스크탑 좁은 화면 2 (1000px~1100px) - 라벨 간격 더 넓게 */
+@media (max-width: 1100px) and (min-width: 1001px) {
+    .project-label.project-eternal {
+        left: 10%;
+    }
+
+    .project-label.project-empyrean {
+        right: 10%;
+    }
+}
+
+/* 데스크탑 좁은 화면 1 (900px~1000px) - 라벨 간격 훨씬 더 넓게 */
+@media (max-width: 1000px) and (min-width: 901px) {
+    .project-label.project-eternal {
+        left: 8%;
+    }
+
+    .project-label.project-empyrean {
+        right: 8%;
+    }
+}
+
+/* Three Projects 반응형 - 화면이 좁아지면 세로 배치 */
+@media (max-width: 1000px) {
+    .projects-harmony-wrapper {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .harmony-description {
+        max-width: none;
+        text-align: center;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .harmony-description h3 {
+        font-size: 1.6rem;
+    }
+
+    .harmony-description p {
+        font-size: 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .central-triangle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .project-label.project-eternal {
+        left: 0%;
+    }
+
+    .project-label.project-empyrean {
+        right: 0%;
+    }
+}
+
+/* 모바일에서 더 작게 */
+@media (max-width: 768px) {
+    .central-triangle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .triangle-center-text {
+        transform: translate(-50%, -20%);
+    }
+
+    .triangle-center-text::before {
+        width: 95px;
+        height: 95px;
+    }
+
+    .center-text-line1,
+    .center-text-line2 {
+        font-size: 0.8rem;
+    }
+
+    .project-label.project-eternal {
+        left: -5%;
+    }
+
+    .project-label.project-empyrean {
+        right: -5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .central-triangle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .triangle-center-text {
+        transform: translate(-50%, -17%);
+    }
+
+    .triangle-center-text::before {
+        width: 75px;
+        height: 75px;
+    }
+
+    .center-text-line1,
+    .center-text-line2 {
+        font-size: 0.7rem;
+    }
+
+    .project-label.project-leah {
+        top: -35px;
+    }
+
+    .project-label.project-eternal {
+        left: -8%;
+        bottom: -15px;
+    }
+
+    .project-label.project-empyrean {
+        right: -8%;
+        bottom: -15px;
+    }
+
+    .project-name {
+        font-size: 0.9rem;
+    }
+
+    .project-desc {
+        font-size: 0.75rem;
+    }
+}
+
+/* Persona System 반응형 - 화면이 좁아지면 세로 배치 */
+@media (max-width: 1024px) {
+    .personas-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .persona-card {
+        padding: var(--spacing-lg);
+    }
+
+    .persona-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .persona-domain {
+        font-size: 1rem;
+    }
+
+    .persona-description {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 768px) {
+    .personas-grid {
+        max-width: 500px;
+        gap: var(--spacing-lg);
+    }
+
+    .persona-card {
+        padding: var(--spacing-md);
+    }
+
+    .persona-icon {
+        width: 100px;
+        height: 70px;
+    }
+
+    .persona-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .persona-domain {
+        font-size: 0.95rem;
+    }
+
+    .persona-description {
+        font-size: 0.95rem;
+    }
+
+    /* Whitepaper 반응형 개선 */
+    .whitepapers-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .whitepaper-card {
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-xs);
+    }
+
+    /* Version Info 반응형 */
+    .version-info {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .version-text {
+        font-size: 0.95rem;
+    }
+
+    .branding-notice {
+        font-size: 0.85rem;
+        padding-top: var(--spacing-xs);
+        margin-top: var(--spacing-xs);
+    }
+
+    /* Collaboration 페이지 eye 이미지 반응형 */
+    .symbol-img {
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto var(--spacing-md) auto;
+    }
+
+    .urnava-symbol {
+        padding: var(--spacing-md);
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .symbol-description {
+        max-width: 90%;
+        padding: var(--spacing-md);
+        margin: 0 auto;
+    }
+
+    /* CTA 섹션 제목 및 본문 통일 (Vision, Whitepaper, Collaboration) */
+    .exploration-content h2,
+    .invitation-section .section-title,
+    .partnership-section .section-title {
+        font-size: 1.6rem;
+    }
+
+    .exploration-content p,
+    .invitation-text,
+    .journey-text,
+    .partnership-text,
+    .partnership-call {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* 이음새 텍스트 조정 */
+    .genesis-text,
+    .exploration-text,
+    .section-intro {
+        font-size: 1.05rem;
+    }
+}
+
+/* 모바일 사이즈 추가 반응형 */
+@media (max-width: 480px) {
+
+    /* Footer 모바일 최적화 (한 줄 유지) */
+    .footer-links {
+        flex-wrap: nowrap;
+        margin-bottom: var(--spacing-sm);
+        gap: 0;
+    }
+
+    .footer-links a {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        padding: 0 6px;
+    }
+
+    .separator {
+        margin: 0 6px;
+        font-size: 0.75rem;
+    }
+
+    /* Whitepaper 모바일 */
+    .whitepaper-card {
+        padding: var(--spacing-md);
+        margin: 0 var(--spacing-xs);
+    }
+
+    .whitepaper-features li {
+        padding-left: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    .download-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .license-text {
+        font-size: 0.8rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Version Info 작은 모바일 */
+    .version-info {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+        border-radius: 8px;
+    }
+
+    .version-text {
+        font-size: 0.88rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .date-highlight {
+        display: inline-block;
+    }
+
+    .branding-notice {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    /* Vision 페이지 연결선 및 번호 모바일 조정 */
+    .philosophy-number {
+        left: var(--spacing-md);
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: -10px;
+    }
+
+    .philosophies-grid::before {
+        left: calc(var(--spacing-md) + 20px);
+    }
+
+    /* Index 페이지 - URNAVA Introduction 모바일 최적화 */
+    .urnava-meaning {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .urnava-meaning h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .urnava-meaning p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+
+    .leah-meaning h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .leah-meaning>p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+        padding: 0 var(--spacing-xs);
+    }
+
+    .vision-box {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-top: var(--spacing-xl);
+        border-radius: 12px;
+    }
+
+    .vision-text {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+
+    /* Vision 페이지 - System Integration (Harmonic Synthesis) 모바일 최적화 */
+    .system-integration {
+        padding: var(--spacing-md) var(--spacing-md);
+        margin-top: var(--spacing-xl);
+        border-radius: 12px;
+    }
+
+    .system-integration h3 {
+        font-size: 1.4rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .system-integration p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+
+    /* Philosophy Items 모바일 */
+    .philosophy-item {
+        padding: var(--spacing-lg) var(--spacing-md);
+        border-radius: 12px;
+    }
+
+    .philosophy-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .philosophy-description {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .philosophy-details p {
+        font-size: 0.9rem;
+    }
+
+    /* LEAH Meaning 텍스트 */
+    .leah-meaning p {
+        text-align: center;
+    }
+
+    /* Proposal Section 모바일 */
+    .proposal-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .proposal-content {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .proposal-text {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+    }
+
+    .proposal-intro {
+        font-size: 1.15rem;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.5;
+    }
+
+    .proposal-description {
+        font-size: 0.95rem;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.75;
+        text-align: left;
+    }
+
+    .proposal-pillars {
+        text-align: left;
+        margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-sm);
+    }
+
+    .proposal-pillars li {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .proposal-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Collaboration 페이지 eye 이미지 모바일 */
+    .symbol-img {
+        width: 95%;
+        max-width: 400px;
+        margin: 0 auto var(--spacing-sm) auto;
+    }
+
+    .symbolic-element {
+        margin: var(--spacing-md) auto;
+        padding: 0 var(--spacing-xs);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .urnava-symbol {
+        padding: var(--spacing-sm);
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .symbol-description {
+        max-width: 100%;
+        font-size: 0.9rem;
+        padding: var(--spacing-sm);
+        margin: 0 auto;
+    }
+
+    /* Names Section 모바일 최적화 */
+    .names-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
+    }
+
+    .name-card {
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-xs);
+    }
+
+    .name-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .meaning-section h4,
+    .pronunciation-section h4 {
+        font-size: 1rem;
+    }
+
+    .meaning-section p,
+    .pronunciation-section p {
+        font-size: 0.95rem;
+    }
+
+    /* CTA 섹션 제목 및 본문 통일 - 작은 모바일 */
+    .exploration-content h2,
+    .invitation-section .section-title,
+    .partnership-section .section-title {
+        font-size: 1.4rem;
+    }
+
+    .exploration-content p,
+    .invitation-text,
+    .journey-text,
+    .partnership-text,
+    .partnership-call {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* 이음새 텍스트 조정 - 작은 모바일 */
+    .genesis-text,
+    .exploration-text,
+    .section-intro {
+        font-size: 0.95rem;
+    }
+}
+
+/* 매우 작은 화면 추가 조정 */
+@media (max-width: 320px) {
+    .symbol-img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto var(--spacing-xs) auto;
+    }
+
+    /* Footer 초소형 화면 최적화 */
+    .footer-links a {
+        font-size: clamp(0.65rem, 3vw, 0.75rem);
+        padding: 0 3px;
+    }
+
+    .separator {
+        margin: 0 3px;
+        font-size: 0.65rem;
+    }
+
+    .whitepaper-card {
+        padding: var(--spacing-sm);
+        margin: 0 var(--spacing-xs);
+    }
+
+    .symbol-description {
+        font-size: 0.85rem;
+        padding: var(--spacing-sm);
+        margin: 0 auto;
+    }
+
+    /* Proposal Section 극소형 화면 */
+    .proposal-text {
+        padding: var(--spacing-sm);
+        border-radius: 8px;
+    }
+
+    .proposal-intro {
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+
+    .proposal-description {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .proposal-pillars li {
+        font-size: 0.85rem;
+    }
+
+    .proposal-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem var(--spacing-sm);
+    }
+
+    /* Index 페이지 - URNAVA Introduction 극소형 화면 */
+    .urnava-meaning {
+        padding: var(--spacing-sm);
+    }
+
+    .urnava-meaning h3 {
+        font-size: 1.3rem;
+    }
+
+    .urnava-meaning p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .leah-meaning h3 {
+        font-size: 1.3rem;
+    }
+
+    .leah-meaning>p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .vision-box {
+        padding: var(--spacing-sm);
+        border-radius: 8px;
+    }
+
+    .vision-text {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    /* Vision 페이지 - System Integration 극소형 화면 */
+    .system-integration {
+        padding: var(--spacing-sm) var(--spacing-sm);
+        border-radius: 8px;
+    }
+
+    .system-integration h3 {
+        font-size: 1.25rem;
+    }
+
+    .system-integration p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    /* Philosophy Items 작은 모바일 */
+    .philosophy-item {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .philosophy-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .philosophy-description {
+        font-size: 0.9rem;
+    }
+
+    .philosophy-details p {
+        font-size: 0.85rem;
+    }
+}
+
+.whitepaper-version {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    margin-bottom: 0.2em;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* ===== 이스터에그 메시지 ===== */
+.easter-egg-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FAFAF8;
+    color: #2A2A2A;
+    padding: 2rem;
+    border-radius: 4px;
+    border: 1px solid #D0D0D0;
+    font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    z-index: 10000;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    max-width: 400px;
+    line-height: 1.5;
+    transition: opacity 0.5s ease-out;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+.easter-egg-message.show {
+    opacity: 1;
+}
+
+/* ===== JavaScript 애니메이션 클래스 ===== */
+.animate-in {
+    animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.loaded .hero-title,
+body.loaded .hero-subtitle {
+    animation-play-state: running;
+}
+
+/* .navbar transition은 L150에서 선언됨 */
+
+/* 이스터에그 메시지 반응형 */
+@media (max-width: 768px) {
+    .easter-egg-message {
+        font-size: 0.85rem;
+        padding: 1.6rem;
+        letter-spacing: 0.35px;
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 480px) {
+    .easter-egg-message {
+        font-size: 0.75rem;
+        padding: 1.4rem;
+        letter-spacing: 0.25px;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 320px) {
+    .easter-egg-message {
+        font-size: 0.7rem;
+        padding: 1.2rem;
+        letter-spacing: 0.2px;
+        max-width: 280px;
+    }
+}
