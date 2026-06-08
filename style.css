@@ -111,6 +111,10 @@
 }
 
 /* ===== 기본 리셋 & 설정 ===== */
+html {
+    font-size: 15px; /* 기본 16px → 15px: 전체 rem 기반 요소 ~6% 축소 */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -289,17 +293,17 @@ h6,
     background:
         radial-gradient(circle at 50% 10%,
             /* 광원: 로고 바로 위쪽, 거의 배경에 가까운 크림 톤 */
-            #FFF9F4 0%,
-            #F8EDE5 14%,
-            #F2E0CF 26%,
-            #EAD3C1 38%,
+            #FFFAF5 0%,
+            #F8EEE7 14%,
+            #F2E2D1 26%,
+            #EAD5C4 38%,
             /* 중간 영역: 기본 베이지와 부드럽게 이어지는 톤 */
-            #E1C5B0 50%,
-            #D9BBA6 62%,
+            #E1C8B3 50%,
+            #D9BEAA 62%,
             /* 바깥 영역: 배경보다 아주 살짝만 진한 베이지 */
-            #CFAF9B 78%,
-            #C7A48F 90%,
-            #BD9A84 100%);
+            #CFB29E 78%,
+            #C7A793 90%,
+            #BD9D88 100%);
     position: relative;
     overflow: hidden;
     padding-top: 55px;
