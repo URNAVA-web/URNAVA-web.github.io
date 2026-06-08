@@ -53,22 +53,22 @@
 :root {
     /* === 색상 팔레트 === */
     /* 주요 베이지 색상 */
-    --primary-beige: #F7F3EF;
-    --secondary-beige: #EDE5DA;
-    --tertiary-beige: #DCC9B5;
+    --primary-beige: #F8F0E9;
+    --secondary-beige: #EEE0D4;
+    --tertiary-beige: #DEC8B3;
 
     /* 액센트 색상 */
-    --accent-gold: #D6A771;
-    --accent-brown: #8F7558;
-    --accent-brown-hover: #6F5A42;
-    --accent-gold-hover: #C19560;
-    --wisdom-accent: #CAA683;
+    --accent-gold: #D7A46D;
+    --accent-brown: #8E7154;
+    --accent-brown-hover: #6D5540;
+    --accent-gold-hover: #C2905B;
+    --wisdom-accent: #CAA17D;
     --connection-blue: #A8B8C8;
 
     /* 텍스트 색상 */
-    --text-primary: #2C2C2C;
-    --text-secondary: #6B6B6B;
-    --text-light: #707070;
+    --text-primary: #2D2825;
+    --text-secondary: #6C605C;
+    --text-light: #716762;
 
     /* 기본 색상 */
     --white: #FFFFFF;
@@ -157,7 +157,7 @@ h6,
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, rgba(247, 245, 242, 0.98) 0%, rgba(237, 231, 221, 0.98) 100%);
+    background: linear-gradient(135deg, rgba(248, 240, 233, 0.98) 0%, rgba(238, 224, 212, 0.98) 100%);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(212, 165, 116, 0.3);
     z-index: 1000;
@@ -289,17 +289,17 @@ h6,
     background:
         radial-gradient(circle at 50% 10%,
             /* 광원: 로고 바로 위쪽, 거의 배경에 가까운 크림 톤 */
-            #FFF9F3 0%,
-            #F8F1E7 14%,
-            #F2E4D5 26%,
-            #EAD7C4 38%,
+            #FFF9F4 0%,
+            #F8EDE5 14%,
+            #F2E0CF 26%,
+            #EAD3C1 38%,
             /* 중간 영역: 기본 베이지와 부드럽게 이어지는 톤 */
-            #E2CBB6 50%,
-            #D9C0AB 62%,
+            #E1C5B0 50%,
+            #D9BBA6 62%,
             /* 바깥 영역: 배경보다 아주 살짝만 진한 베이지 */
-            #D0B59F 78%,
-            #C6AA94 90%,
-            #BCA089 100%);
+            #CFAF9B 78%,
+            #C7A48F 90%,
+            #BD9A84 100%);
     position: relative;
     overflow: hidden;
     padding-top: 55px;
