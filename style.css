@@ -1769,6 +1769,18 @@ section>* {
     font-size: 1.8rem;
     color: var(--text-primary);
     font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.name-tag {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent-brown);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    opacity: 0.7;
     margin-bottom: var(--spacing-md);
 }
 
