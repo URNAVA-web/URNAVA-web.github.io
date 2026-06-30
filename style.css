@@ -2164,6 +2164,17 @@ section>* {
         margin: 0 var(--spacing-xs);
     }
 
+    .name-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .name-tag {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        margin-bottom: var(--spacing-sm);
+    }
+
     .symbol-img {
         width: 90%;
         max-width: 500px;
