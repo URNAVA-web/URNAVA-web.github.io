@@ -831,7 +831,10 @@ section>* {
 .footer-links a {
     color: var(--primary-beige);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: color var(--transition-normal);
     white-space: nowrap;
     padding: 0 4px;
@@ -3888,7 +3891,7 @@ body.loaded .hero-subtitle {
 }
 
 .monument-part {
-    background-color: #F3E8DF;
+    background-color: #F1E6DB;
     border: 1px solid rgba(142, 113, 84, 0.32);
     border-radius: 14px;
     padding: var(--spacing-lg) var(--spacing-md);
@@ -3959,7 +3962,7 @@ body.loaded .hero-subtitle {
     padding: var(--spacing-md) var(--spacing-lg);
     position: relative;
     z-index: 1;
-    background-color: #F3E8DF;
+    background-color: #F1E6DB;
     border: 1px solid rgba(142, 113, 84, 0.32);
     border-radius: 14px;
     box-shadow: var(--shadow-sm);
