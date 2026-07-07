@@ -247,9 +247,10 @@ h6,
 .nav-link {
     text-decoration: none;
     color: var(--text-primary);
+    font-family: 'Consolas', 'SFMono-Regular', 'Menlo', 'Liberation Mono', 'Courier New', monospace;
     font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
     transition: color var(--transition-fast);
     position: relative;
     padding: 0.8rem 1rem;
