@@ -3855,6 +3855,13 @@ body.loaded .hero-subtitle {
     white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+    .monument-divider span {
+        white-space: normal;
+        text-align: center;
+    }
+}
+
 .monument-parts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
