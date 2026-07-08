@@ -3498,7 +3498,7 @@ body.loaded .hero-subtitle {
 
 /* Composed narrative-other intro */
 .name-intro {
-    max-width: 760px;
+    max-width: 960px;
     margin: 0 auto calc(var(--spacing-xl) * 1.2);
     text-align: center;
 }
@@ -3510,7 +3510,7 @@ body.loaded .hero-subtitle {
     color: var(--text-primary);
     line-height: 1.4;
     letter-spacing: -0.01em;
-    max-width: 680px;
+    max-width: 960px;
     margin: 0 auto var(--spacing-md);
 }
 
