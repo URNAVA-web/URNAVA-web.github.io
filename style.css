@@ -1031,7 +1031,8 @@ section>* {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
-    margin: var(--spacing-xl) 0;
+    max-width: 960px;
+    margin: var(--spacing-xl) auto;
 }
 
 .question-card {
@@ -1712,6 +1713,7 @@ section>* {
 .proposal-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-sm);
     background-color: var(--accent-brown);
     color: var(--white);
@@ -2934,8 +2936,10 @@ section>* {
     .proposal-btn {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 0.95rem;
-        width: 100%;
-        max-width: 320px;
+        width: auto;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
     }
 
     /* Collaboration 페이지 eye 이미지 모바일 */
@@ -3074,6 +3078,10 @@ section>* {
     .proposal-btn {
         font-size: 0.9rem;
         padding: 0.6rem var(--spacing-sm);
+        width: auto;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
     }
 
     /* Index 페이지 - URNAVA Introduction 극소형 화면 */
@@ -3551,7 +3559,7 @@ body.loaded .hero-subtitle {
 }
 
 .value-row:hover {
-    background-color: var(--primary-beige);
+    background-color: transparent;
 }
 
 .value-row-head {
