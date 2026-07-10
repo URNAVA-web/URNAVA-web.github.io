@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe animated elements
-    const animatedElements = document.querySelectorAll('.question-item, .value-item, .cta-btn');
+    const animatedElements = document.querySelectorAll('.question-item, .value-item');
     animatedElements.forEach(element => {
         sectionObserver.observe(element);
     });
@@ -145,4 +145,4 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 100);
-}); 
+});
