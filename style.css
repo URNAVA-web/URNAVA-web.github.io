@@ -2279,7 +2279,19 @@ section>* {
 .three-projects-section {
     background-color: var(--white);
     position: relative;
-    padding: calc(var(--spacing-md) * 1.35) 0 calc(var(--spacing-xxl) * 1.08);
+    padding: calc(var(--spacing-md) * 2.25) 0 calc(var(--spacing-xxl) * 1.12);
+}
+
+.three-projects-section::before {
+    content: '';
+    position: absolute;
+    top: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--wisdom-accent);
+    opacity: 0.75;
 }
 
 .projects-harmony-wrapper {
@@ -3302,7 +3314,7 @@ body.loaded .hero-subtitle {
 /* ===== Home §2: Three Questions ===== */
 .questions-section {
     background-color: var(--white);
-    padding-bottom: calc(var(--spacing-lg) * 1.15);
+    padding-bottom: calc(var(--spacing-lg) * 1.45);
 }
 
 .tasks-grid {
