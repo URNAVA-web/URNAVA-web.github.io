@@ -3524,6 +3524,10 @@ body.loaded .hero-subtitle {
     margin: 0 auto;
 }
 
+.name-answer-conclusion {
+    margin-top: var(--spacing-sm);
+}
+
 .name-answer strong {
     color: var(--accent-brown);
     font-weight: 600;
@@ -3594,6 +3598,10 @@ body.loaded .hero-subtitle {
     line-height: 1.5;
     letter-spacing: 0.2px;
     width: 360px;
+}
+
+.value-row:not(.value-row-harmony) .value-row-traits {
+    color: #4D4541;
 }
 
 .value-row-harmony .value-row-traits {
