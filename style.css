@@ -2009,6 +2009,7 @@ section>* {
 
 .date-highlight {
     color: var(--accent-brown);
+    font-weight: 700;
 }
 
 .branding-notice {
@@ -4118,5 +4119,184 @@ body.loaded .hero-subtitle {
 
     .architecture-visual {
         padding: 64px 0 56px;
+    }
+}
+
+/* ============================================
+   Bridge: The Work Ahead
+   ============================================ */
+
+.workahead-intro {
+    max-width: 640px;
+    margin: 0 auto var(--spacing-xl);
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+.wa-rows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+}
+
+.wa-row {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: var(--spacing-lg);
+    background-color: var(--primary-beige);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    text-align: left;
+}
+
+.wa-head {
+    display: flex;
+    flex-direction: column;
+}
+
+.wa-head .wa-tag {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent-brown);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: var(--spacing-xs);
+}
+
+.wa-num {
+    font-family: var(--font-mono);
+    color: var(--accent-gold);
+    margin-right: 0.5rem;
+}
+
+.wa-head h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin: 0;
+}
+
+.wa-fields {
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(212, 165, 116, 0.35);
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-brown);
+    opacity: 0.8;
+    line-height: 1.7;
+}
+
+.wa-body p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin-bottom: var(--spacing-sm);
+    max-width: 62ch;
+}
+
+.wa-body p:last-child {
+    margin-bottom: 0;
+}
+
+.wa-lead {
+    font-weight: 600;
+    color: var(--accent-brown);
+}
+
+.wa-note {
+    max-width: 780px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border: 1px solid rgba(212, 165, 116, 0.25);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 3.5rem 3.75rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.wa-note .wa-tag {
+    display: block;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent-brown);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: var(--spacing-md);
+}
+
+.wa-note p {
+    font-family: var(--font-serif);
+    font-size: 1.02rem;
+    line-height: 1.95;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.wa-note p.wa-sign {
+    text-align: right;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-md);
+    margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .wa-row.animate-in,
+    .wa-note.animate-in {
+        animation: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .wa-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+
+    .wa-fields {
+        margin-top: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 640px) {
+    .workahead-intro {
+        font-size: 1rem;
+    }
+
+    .wa-row {
+        padding: var(--spacing-md);
+    }
+
+    .wa-note {
+        padding: 2.25rem 1.5rem;
+    }
+
+    .wa-note p {
+        font-size: 0.98rem;
+        line-height: 1.85;
     }
 }

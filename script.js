@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe animated elements
-    const animatedElements = document.querySelectorAll('.question-item, .value-item');
+    const animatedElements = document.querySelectorAll('.question-item, .value-item, .wa-row, .wa-note');
     animatedElements.forEach(element => {
         sectionObserver.observe(element);
     });
