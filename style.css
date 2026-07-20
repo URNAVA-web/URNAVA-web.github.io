@@ -4305,19 +4305,53 @@ body.loaded .hero-subtitle {
    Home refinement: light, inscription, figure
    ============================================ */
 
-/* 1. Hero: breathing light */
+/* 1. Hero: dawn strikes once, then stillness */
+.hero-section {
+    background: #BD9D88;
+}
+
 .hero-section::before {
     content: '';
     position: absolute;
-    inset: -25%;
-    background: radial-gradient(circle at 50% 23%,
-            rgba(255, 250, 245, 0.70) 0%,
-            rgba(248, 238, 231, 0.35) 16%,
-            rgba(242, 226, 209, 0.12) 30%,
-            rgba(242, 226, 209, 0) 46%);
-    opacity: 0.45;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 10%,
+            rgba(255, 250, 245, 0.32) 0%,
+            rgba(248, 238, 231, 0.16) 16%,
+            rgba(242, 226, 209, 0.05) 30%,
+            rgba(242, 226, 209, 0) 46%),
+        radial-gradient(circle at 50% 10%,
+            #FFFAF5 0%,
+            #F8EEE7 14%,
+            #F2E2D1 26%,
+            #EAD5C4 38%,
+            #E1C8B3 50%,
+            #D9BEAA 62%,
+            #CFB29E 78%,
+            #C7A793 90%,
+            #BD9D88 100%);
+    opacity: 0;
+    animation: dawnLight 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.05s forwards;
     pointer-events: none;
     z-index: 0;
+}
+
+@keyframes dawnLight {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dawnRays {
+    from {
+        opacity: 0;
+        transform: scaleY(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
 }
 
 /* Optional layer, kept off by default: still rays, painted not moving */
@@ -4342,6 +4376,10 @@ body.loaded .hero-subtitle {
             rgba(0, 0, 0, 0.9) 0%,
             rgba(0, 0, 0, 0.4) 30%,
             rgba(0, 0, 0, 0) 62%);
+    opacity: 0;
+    transform: scaleY(0.7);
+    transform-origin: 50% 8%;
+    animation: dawnRays 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s forwards;
     pointer-events: none;
     z-index: 0;
 }
@@ -4607,6 +4645,17 @@ body.loaded .hero-subtitle {
 
 /* Motion respect */
 @media (prefers-reduced-motion: reduce) {
+
+    .hero-section::before {
+        animation: none;
+        opacity: 1;
+    }
+
+    .hero-section.hero-rays::after {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 
     .reuleaux-svg .r-arc {
         stroke-dashoffset: 0;
