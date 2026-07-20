@@ -4346,31 +4346,6 @@ body.loaded .hero-subtitle {
     z-index: 0;
 }
 
-.hero-scroll-cue {
-    position: absolute;
-    bottom: 36px;
-    left: 50%;
-    width: 1px;
-    height: 64px;
-    background: linear-gradient(to bottom,
-            rgba(45, 40, 37, 0),
-            rgba(45, 40, 37, 0.45));
-    animation: cuePulse 3.2s ease-in-out infinite;
-    z-index: 1;
-}
-
-@keyframes cuePulse {
-
-    0%,
-    100% {
-        opacity: 0.25;
-    }
-
-    50% {
-        opacity: 0.7;
-    }
-}
-
 /* 2. New Wisdom: inscription instead of card */
 .urnava-introduction .urnava-meaning {
     background-color: transparent;
@@ -4633,10 +4608,6 @@ body.loaded .hero-subtitle {
 /* Motion respect */
 @media (prefers-reduced-motion: reduce) {
 
-    .hero-scroll-cue {
-        animation: none;
-    }
-
     .reuleaux-svg .r-arc {
         stroke-dashoffset: 0;
     }
@@ -4661,11 +4632,6 @@ body.loaded .hero-subtitle {
 
 /* Small screens */
 @media (max-width: 640px) {
-    .hero-scroll-cue {
-        height: 48px;
-        bottom: 26px;
-    }
-
     .question-card p {
         font-size: 0.98rem;
     }
