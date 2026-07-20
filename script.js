@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe animated elements
-    const animatedElements = document.querySelectorAll('.question-item, .value-item, .wa-row, .wa-note');
+    const animatedElements = document.querySelectorAll('.urnava-meaning, .question-card, .central-triangle, .harmony-description, .name-intro, .leah-values-box, .vision-box, .invitation-content, .wa-row, .wa-note, .version-info, .corpus-monument-head, .monument-part, .monument-summary, .whitepaper-card');
     animatedElements.forEach(element => {
         sectionObserver.observe(element);
     });
