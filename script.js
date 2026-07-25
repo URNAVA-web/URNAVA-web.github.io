@@ -103,22 +103,42 @@ document.addEventListener('DOMContentLoaded', function() {
     function showEasterEggMessage() {
         const message = document.createElement('div');
         message.className = 'easter-egg-message';
-        message.textContent = 'Im Kampf um Gott';
+
+        const pathwayLink = document.createElement('a');
+        pathwayLink.className = 'easter-egg-pathway';
+        pathwayLink.href = 'pathway.html';
+        pathwayLink.textContent = 'Im Kampf um Gott';
+        pathwayLink.setAttribute('aria-label', 'Open A Pathway Made by Another');
+
+        message.appendChild(pathwayLink);
         
         document.body.appendChild(message);
+
+        let dismissTimer;
+
+        function hideMessage() {
+            message.classList.remove('show');
+            setTimeout(() => {
+                message.remove();
+            }, 500);
+        }
+
+        function scheduleDismissal() {
+            clearTimeout(dismissTimer);
+            dismissTimer = setTimeout(hideMessage, 8000);
+        }
         
         // Fade in
         requestAnimationFrame(() => {
             message.classList.add('show');
         });
-        
-        // Fade out and remove after 5 seconds
-        setTimeout(() => {
-            message.classList.remove('show');
-            setTimeout(() => {
-                message.remove();
-            }, 500);
-        }, 5000);
+
+        message.addEventListener('mouseenter', () => clearTimeout(dismissTimer));
+        message.addEventListener('mouseleave', scheduleDismissal);
+        pathwayLink.addEventListener('focus', () => clearTimeout(dismissTimer));
+        pathwayLink.addEventListener('blur', scheduleDismissal);
+
+        scheduleDismissal();
     }
     
     // Section entrance animation

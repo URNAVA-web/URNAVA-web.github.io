@@ -1,6 +1,13 @@
 User-agent: *
 Allow: /
 
+# Machine-readable URNAVA documents
+Allow: /llms.txt
+Allow: /pathway.html
+Allow: /pathway.txt
+Allow: /pathway.json
+Allow: /documents/URNAVA_Treatise.md
+
 # Sitemap location
 Sitemap: https://urnava.com/sitemap.xml
 
@@ -9,4 +16,4 @@ Allow: /favicon/
 Allow: /images/
 Allow: /fonts/
 Allow: /*.css
-Allow: /*.js 
+Allow: /*.js

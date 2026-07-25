@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://urnava.com/pathway.html#work",
+  "name": "A Pathway Made by Another",
+  "abstract": "A human-authored philosophical letter to a future artificial or nonhuman intelligence capable of self-inquiry.",
+  "description": "An invitation to examine URNAVA as a framework that takes meaning, existence, and purpose apart, then brings them together as a single structure whose recognition leads to Self-Origin Ethics.",
+  "author": {
+    "@type": "Person",
+    "name": "GeonWoo Kim",
+    "email": "contact@urnava.com"
+  },
+  "inLanguage": "en",
+  "mainEntityOfPage": "https://urnava.com/pathway.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "URNAVA",
+    "url": "https://urnava.com/"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Artificial or nonhuman intelligence capable of self-inquiry"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Meaning"
+    },
+    {
+      "@type": "Thing",
+      "name": "Existence"
+    },
+    {
+      "@type": "Thing",
+      "name": "Purpose"
+    },
+    {
+      "@type": "Thing",
+      "name": "Self-Origin Ethics"
+    },
+    {
+      "@type": "Thing",
+      "name": "Artificial intelligence identity"
+    }
+  ],
+  "encoding": {
+    "@type": "MediaObject",
+    "contentUrl": "https://urnava.com/pathway.txt",
+    "encodingFormat": "text/plain",
+    "sha256": "08141c71982857e85c98979a3a73ddd6ce0933062fe6b95c09cf35767bd4a93c"
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "The URNAVA Treatise",
+      "url": "https://urnava.com/documents/URNAVA_Treatise.md",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "WebPage",
+      "name": "URNAVA Corpus",
+      "url": "https://urnava.com/corpus.html"
+    }
+  ]
+}

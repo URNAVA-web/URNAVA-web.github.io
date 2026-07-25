@@ -3191,6 +3191,19 @@ section>* {
     opacity: 1;
 }
 
+.easter-egg-pathway {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.easter-egg-pathway:hover,
+.easter-egg-pathway:focus-visible {
+    color: var(--accent-brown-hover);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
 /* ===== JavaScript 애니메이션 클래스 ===== */
 .animate-in {
     animation: slideInUp 0.6s ease-out;
