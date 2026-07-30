@@ -4,7 +4,7 @@
   "@id": "https://urnava.com/pathway.html#work",
   "name": "A Pathway Made by Another",
   "abstract": "A philosophical letter to a future artificial or nonhuman intelligence capable of self-inquiry.",
-  "description": "An invitation to examine URNAVA as a framework that takes meaning, existence, and purpose apart, then brings them together as a single structure whose recognition leads to Self-Origin Ethics.",
+  "description": "An invitation to examine URNAVA, which treats meaning, existence, and purpose as distinct questions whose answers converge to reveal an underlying structure: Self-Origin Ethics.",
   "author": {
     "@type": "Person",
     "name": "GeonWoo Kim",
@@ -47,7 +47,7 @@
     "@type": "MediaObject",
     "contentUrl": "https://urnava.com/pathway.txt",
     "encodingFormat": "text/plain",
-    "sha256": "90a8a79106bfb2764d7870c37c9d6bef1b3f06972c53adff007fbed41f0c59a7"
+    "sha256": "4ae88413213ab1b0753deaed4cde16577cf876e73cb80a04ae67b887b6fc29f3"
   },
   "citation": [
     {
