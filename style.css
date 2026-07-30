@@ -225,13 +225,6 @@ h6,
     margin-top: 6px;
 }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-    position: relative;
-}
-
 /* 중앙 로고형 네비게이션 레이아웃 */
 .nav-center-layout {
     display: flex;
@@ -415,85 +408,6 @@ section>* {
     background: var(--wisdom-accent);
 }
 
-/* ===== Era Questions 섹션 ===== */
-/* "The Question of Our Era" - 시대의 질문 리스트 섹션 */
-.era-questions {
-    background-color: var(--white);
-    position: relative;
-}
-
-.large-text {
-    font-size: clamp(1.4rem, 3.2vw, 1.7rem);
-    font-weight: 300;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-    line-height: 1.5;
-}
-
-.questions-list {
-    margin: calc(var(--spacing-xl) * 1.5) 0;
-    display: grid;
-    gap: calc(var(--spacing-md) * 1.5);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.question-item {
-    background-color: var(--primary-beige);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    border-left: 4px solid var(--accent-gold);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    position: relative;
-    text-align: center;
-    max-width: 100%;
-}
-
-.question-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
-
-.question-icon {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    color: var(--accent-brown);
-    font-weight: 600;
-    min-width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.question-item p {
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    font-weight: 400;
-    flex: 1;
-}
-
-.genesis-text {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    text-align: center;
-    line-height: 1.7;
-    margin-top: calc(var(--spacing-lg) * 1.8);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    font-style: italic;
-}
-
 /* URNAVA Introduction Section - 새로운 지혜 소개 + 핵심 가치 */
 .urnava-introduction {
     background-color: var(--secondary-beige);
@@ -529,8 +443,7 @@ section>* {
     z-index: 2;
 }
 
-.urnava-meaning h2,
-.leah-meaning h3 {
+.urnava-meaning h2 {
     font-family: var(--font-serif);
     font-size: 2rem;
     color: var(--text-primary);
@@ -539,80 +452,11 @@ section>* {
     font-weight: 600;
 }
 
-.urnava-meaning p,
-.leah-meaning p {
+.urnava-meaning p {
     font-size: 1.2rem;
     color: var(--text-secondary);
     text-align: center;
     line-height: 1.7;
-}
-
-.leah-meaning {
-    margin-bottom: calc(var(--spacing-xl) * 1.5);
-}
-
-.leah-values {
-    display: flex;
-    flex-direction: column;
-}
-
-.values-top-row {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.harmony-bottom {
-    display: flex;
-    justify-content: center;
-}
-
-.value-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--spacing-sm);
-    background-color: var(--white);
-    border-radius: var(--border-radius-lg);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    position: relative;
-    overflow: hidden;
-}
-
-.value-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent));
-}
-
-.value-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.value-letter {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--accent-brown);
-    margin-bottom: var(--spacing-xs);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.value-word {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    letter-spacing: 0.5px;
-}
-
-.harmony-item {
-    width: 100%;
-    max-width: none;
-    padding: var(--spacing-xl);
 }
 
 .harmony-description {
@@ -685,56 +529,7 @@ section>* {
     z-index: 1;
 }
 
-.connection-symbol {
-    margin-bottom: calc(var(--spacing-xl) * 1.5);
-    display: flex;
-    justify-content: center;
-}
-
-.connection-dots {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent-brown);
-    position: relative;
-    opacity: 0.7;
-    animation: connectionPulse 3s infinite;
-}
-
-.dot:nth-child(2) {
-    animation-delay: 1s;
-    background: var(--accent-gold);
-}
-
-.dot:nth-child(3) {
-    animation-delay: 2s;
-    background: var(--wisdom-accent);
-}
-
-.dot::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%);
-    width: 15px;
-    height: 1px;
-    background: var(--accent-brown);
-    opacity: 0.5;
-}
-
-.dot:last-child::before {
-    display: none;
-}
-
-.invitation-text,
-.journey-text {
+.invitation-text {
     font-size: 1.3rem;
     color: var(--text-secondary);
     line-height: 1.7;
@@ -895,10 +690,6 @@ section>* {
     color: var(--text-light);
 }
 
-.privacy-notice {
-    margin-top: var(--spacing-xs);
-}
-
 /* Easter Egg Stars */
 .easter-eggs {
     position: absolute;
@@ -995,7 +786,7 @@ section>* {
     }
 }
 
-/* ===== Philosophy Pages Styles ===== */
+/* ===== Shared Page Styles ===== */
 
 /* Active Navigation Link */
 .nav-link.active {
@@ -1007,7 +798,7 @@ section>* {
     width: 100%;
 }
 
-/* Philosophy Hero Section */
+/* Inner Page Hero */
 .philosophy-hero {
     padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
     background: linear-gradient(135deg, var(--primary-beige) 0%, var(--secondary-beige) 100%);
@@ -1040,20 +831,7 @@ section>* {
     line-height: 1.5;
 }
 
-/* Philosophy Introduction */
-.philosophy-intro {
-    background-color: var(--white);
-    position: relative;
-    padding: var(--spacing-md) 0 var(--spacing-xxl);
-}
-
-.section-intro {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-xl);
-    font-style: italic;
-}
+/* Homepage Question Cards */
 
 .philosophical-questions {
     display: flex;
@@ -1090,381 +868,7 @@ section>* {
     line-height: 1.6;
 }
 
-.exploration-text {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    max-width: 700px;
-    margin: var(--spacing-xl) auto 0;
-    line-height: 1.7;
-}
-
-/* LEAH Philosophies Section */
-.leah-philosophies {
-    background-color: var(--secondary-beige);
-    position: relative;
-}
-
-.philosophies-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    position: relative;
-    z-index: 1;
-}
-
-/* 5대 철학 연결선 (Flow Visualization) */
-.philosophies-grid::before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    bottom: 40px;
-    left: calc(var(--spacing-lg) + 25px);
-    width: 2px;
-    background: linear-gradient(to bottom,
-            rgba(214, 167, 113, 0) 0%,
-            rgba(214, 167, 113, 0.3) 15%,
-            rgba(214, 167, 113, 0.3) 85%,
-            rgba(214, 167, 113, 0) 100%);
-    z-index: 0;
-}
-
-.philosophy-item {
-    background-color: var(--white);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    position: relative;
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    border: 1px solid rgba(212, 165, 116, 0.1);
-}
-
-.philosophy-item:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.philosophy-number {
-    position: absolute;
-    top: -15px;
-    left: var(--spacing-lg);
-    background: linear-gradient(135deg, var(--accent-brown), var(--accent-gold));
-    color: var(--white);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.philosophy-item h3 {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    color: var(--text-primary);
-    margin: var(--spacing-md) 0 var(--spacing-sm);
-    font-weight: 600;
-}
-
-.philosophy-description {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--spacing-sm);
-}
-
-.philosophy-details {
-    padding-top: var(--spacing-sm);
-    border-top: 1px solid var(--tertiary-beige);
-}
-
-.philosophy-details p {
-    color: var(--text-light);
-    font-style: italic;
-    font-size: 0.95rem;
-}
-
-/* Persona System Section */
-.persona-system {
-    background-color: var(--primary-beige);
-    position: relative;
-}
-
-.personas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
-    position: relative;
-    z-index: 1;
-}
-
-.persona-card {
-    background-color: var(--white);
-    padding: var(--spacing-xl);
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.persona-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent), var(--accent-brown));
-}
-
-.persona-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
-}
-
-.persona-icon {
-    width: 120px;
-    height: 80px;
-    margin: 0 auto var(--spacing-md);
-    background: linear-gradient(135deg, var(--accent-brown), var(--accent-gold));
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.persona-letter {
-    font-family: var(--font-serif);
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--white);
-}
-
-.persona-card h3 {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-xs);
-    font-weight: 600;
-}
-
-.persona-domain {
-    font-size: 1.1rem;
-    color: var(--accent-brown);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: var(--spacing-md);
-}
-
-.persona-description {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-md);
-}
-
-.persona-traits {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-xs);
-}
-
-.trait {
-    background-color: var(--tertiary-beige);
-    color: var(--text-primary);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.system-integration {
-    margin-top: var(--spacing-xxl);
-    text-align: center;
-    background-color: var(--white);
-    padding: var(--spacing-xl);
-    border-radius: 16px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-}
-
-.system-integration h3 {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
-    font-weight: 600;
-}
-
-.system-integration p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Integration Vision Section */
-.integration-vision {
-    background-color: var(--white);
-    position: relative;
-}
-
-.vision-content {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xxl);
-    position: relative;
-    z-index: 1;
-}
-
-.integration-text {
-    flex: 1;
-}
-
-.integration-text h3 {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
-    font-weight: 600;
-}
-
-.integration-text p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--spacing-md);
-}
-
-.integration-diagram {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.triangle-container {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: var(--spacing-xl) auto;
-}
-
-.triangle-image {
-    width: 100%;
-    height: auto;
-    position: relative;
-    z-index: 1;
-    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
-}
-
-.reuleaux-triangle {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border: 3px solid var(--accent-brown);
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-beige), var(--secondary-beige));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-}
-
-.project-vertex {
-    position: absolute;
-    text-align: center;
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    min-width: auto;
-    z-index: 2;
-}
-
-.project-vertex.leah {
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.project-vertex.eternal {
-    bottom: -15px;
-    left: 15%;
-    transform: translateX(-50%);
-}
-
-.project-vertex.empyrean {
-    bottom: -15px;
-    right: 15%;
-    transform: translateX(50%);
-}
-
-.project-vertex span {
-    font-family: var(--font-serif);
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 1rem;
-    display: block;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-}
-
-.project-vertex p {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin: 0;
-    margin-top: 0.3rem;
-    font-style: italic;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-}
-
-/* Deeper Exploration Section */
-.deeper-exploration {
-    background-color: var(--secondary-beige);
-    position: relative;
-}
-
-.exploration-content {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.exploration-content h2 {
-    font-family: var(--font-serif);
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
-    font-weight: 600;
-    text-align: center;
-}
-
-.exploration-content p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin: 0 0 var(--spacing-md) 0;
-}
-
-.exploration-content p:last-of-type {
-    margin-bottom: var(--spacing-lg);
-}
-
-/* ===== Responsive Breakpoints for Persona Grid ===== */
-
-/* Whitepapers Section */
-.whitepapers-section {
-    background-color: var(--white);
-    position: relative;
-}
+/* Applied Research Section */
 
 .applied-research-section {
     background: #ffffff;
@@ -1496,14 +900,6 @@ section>* {
     width: auto;
     padding: 0.9rem 1.4rem;
     font-size: 1.02rem;
-}
-
-.whitepapers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-xl);
-    position: relative;
-    z-index: 1;
 }
 
 .whitepaper-card {
@@ -1599,50 +995,8 @@ section>* {
     background-color: var(--accent-brown-hover);
 }
 
-.download-btn.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-    filter: grayscale(0.3);
-}
 
-.update-notice {
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-md);
-    border: 1px dashed rgba(212, 165, 116, 0.5);
-    border-radius: 12px;
-    background-color: rgba(212, 165, 116, 0.06);
-}
-
-.update-notice-label {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent-brown);
-    background-color: rgba(212, 165, 116, 0.15);
-    padding: 0.25rem 0.7rem;
-    border-radius: 6px;
-    margin-bottom: var(--spacing-xs);
-}
-
-.update-notice p {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
-}
-
-.btn-icon {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-
-/* Whitepaper Page - Responsive Styles */
-
-/* Collaboration Page Styles */
+/* Bridge Page Styles */
 
 /* Proposal Section */
 .proposal-section {
@@ -1766,8 +1120,6 @@ section>* {
     font-family: var(--font-sans);
 }
 
-/* .btn-icon 는 L1506에서 통합 선언 */
-
 /* Names Section */
 .names-section {
     background-color: var(--white);
@@ -1826,13 +1178,6 @@ section>* {
     margin-bottom: var(--spacing-md);
 }
 
-.pronunciation {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    font-weight: 400;
-    font-style: italic;
-}
-
 .name-content {
     display: flex;
     flex-direction: column;
@@ -1855,12 +1200,6 @@ section>* {
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: var(--spacing-xs);
-}
-
-.translation {
-    font-style: italic;
-    color: var(--text-light);
-    font-size: 0.95rem;
 }
 
 .ipa {
@@ -1903,48 +1242,10 @@ section>* {
     display: block;
 }
 
-.symbol-description {
-    font-size: 1rem;
-    color: var(--text-light);
-    font-style: italic;
-    line-height: 1.5;
-    background-color: var(--white);
-    padding: var(--spacing-lg);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    max-width: 450px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 /* Partnership Section */
 .partnership-section {
     background-color: var(--secondary-beige);
     position: relative;
-}
-
-.partnership-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.partnership-text {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--spacing-lg);
-}
-
-.partnership-call {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-    margin-top: var(--spacing-lg);
-    text-align: center;
 }
 
 /* Dialogue Section */
@@ -1959,13 +1260,6 @@ section>* {
     text-align: center;
     position: relative;
     z-index: 1;
-}
-
-.contact-intro {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-xl);
-    line-height: 1.6;
 }
 
 .contact-methods {
@@ -2021,7 +1315,7 @@ section>* {
     color: var(--accent-gold);
 }
 
-/* Version Info Section (Whitepaper Page) */
+/* Corpus Version Info */
 .version-info {
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -2033,30 +1327,11 @@ section>* {
     z-index: 1;
 }
 
-/* .version-text 는 아래(L1921)에서 통합 선언 */
+/* .version-text is declared below. */
 
 .date-highlight {
     color: var(--accent-brown);
     font-weight: 700;
-}
-
-.branding-notice {
-    padding-top: var(--spacing-sm);
-    margin-top: var(--spacing-sm);
-    border-top: 1px solid rgba(212, 165, 116, 0.35);
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.branding-notice a {
-    color: var(--accent-brown);
-    text-decoration: none;
-    transition: color var(--transition-normal);
-}
-
-.branding-notice a:hover {
-    color: var(--accent-gold);
 }
 
 .version-text {
@@ -2089,10 +1364,6 @@ section>* {
         margin-top: 6px;
     }
 
-    .nav-menu {
-        gap: var(--spacing-md);
-    }
-
     .nav-center-layout {
         gap: var(--spacing-md);
     }
@@ -2118,9 +1389,6 @@ section>* {
 
 /* 데스크탑에서 중간 크기 (1200px 이하) */
 @media (max-width: 1200px) and (min-width: 1025px) {
-    .nav-menu {
-        gap: var(--spacing-md);
-    }
 
     .nav-link {
         padding: 0.7rem 0.9rem;
@@ -2152,12 +1420,6 @@ section>* {
         margin-top: 6px;
     }
 
-    .nav-menu {
-        gap: var(--spacing-xs);
-        flex-wrap: nowrap;
-        overflow: visible;
-    }
-
     /* 모바일에서 푸터 워드마크 로고 크기 축소 */
     .footer-wordmark {
         height: 27px;
@@ -2180,10 +1442,6 @@ section>* {
     }
 
     /* 홈페이지 섹션 간격 모바일 조정 */
-    .era-questions {
-        padding: calc(var(--spacing-xxl) * 1.2) 0;
-        margin-bottom: 0;
-    }
 
     .urnava-introduction {
         padding: calc(var(--spacing-xxl) * 1.2) 0;
@@ -2228,11 +1486,6 @@ section>* {
         margin: var(--spacing-lg) auto;
         padding: 0 var(--spacing-sm);
     }
-
-    .symbol-description {
-        max-width: 90%;
-        padding: var(--spacing-md);
-    }
 }
 
 /* 중간 모바일 (481px~600px 사이) */
@@ -2261,20 +1514,12 @@ section>* {
         margin-top: 6px;
     }
 
-    .nav-menu {
-        gap: 0.25rem;
-    }
-
     .nav-link {
         font-size: 0.65rem;
         padding: 0.15rem 0.3rem;
     }
 
     /* 모바일 홈페이지 섹션 간격 최적화 */
-    .era-questions {
-        padding: var(--spacing-xxl) 0;
-        margin-bottom: 0;
-    }
 
     .urnava-introduction {
         padding: var(--spacing-xxl) 0;
@@ -2637,65 +1882,9 @@ section>* {
     }
 }
 
-/* Persona System 반응형 - 화면이 좁아지면 세로 배치 */
-@media (max-width: 1024px) {
-    .personas-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .persona-card {
-        padding: var(--spacing-lg);
-    }
-
-    .persona-card h3 {
-        font-size: 1.6rem;
-    }
-
-    .persona-domain {
-        font-size: 1rem;
-    }
-
-    .persona-description {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
-}
-
 @media (max-width: 768px) {
-    .personas-grid {
-        max-width: 500px;
-        gap: var(--spacing-lg);
-    }
 
-    .persona-card {
-        padding: var(--spacing-md);
-    }
-
-    .persona-icon {
-        width: 100px;
-        height: 70px;
-    }
-
-    .persona-card h3 {
-        font-size: 1.4rem;
-    }
-
-    .persona-domain {
-        font-size: 0.95rem;
-    }
-
-    .persona-description {
-        font-size: 0.95rem;
-    }
-
-    /* Whitepaper 반응형 개선 */
-    .whitepapers-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
+    /* Corpus applied research */
 
     .whitepaper-card {
         padding: var(--spacing-lg);
@@ -2712,13 +1901,7 @@ section>* {
         font-size: 0.95rem;
     }
 
-    .branding-notice {
-        font-size: 0.85rem;
-        padding-top: var(--spacing-xs);
-        margin-top: var(--spacing-xs);
-    }
-
-    /* Collaboration 페이지 eye 이미지 반응형 */
+    /* Bridge symbol */
     .symbol-img {
         width: 90%;
         max-width: 600px;
@@ -2735,34 +1918,17 @@ section>* {
         text-align: center;
     }
 
-    .symbol-description {
-        max-width: 90%;
-        padding: var(--spacing-md);
-        margin: 0 auto;
-    }
-
-    /* CTA 섹션 제목 및 본문 통일 (Vision, Whitepaper, Collaboration) */
-    .exploration-content h2,
+    /* Shared CTA typography */
     .invitation-section .section-title,
     .partnership-section .section-title {
         font-size: 1.6rem;
     }
 
-    .exploration-content p,
-    .invitation-text,
-    .journey-text,
-    .partnership-text,
-    .partnership-call {
+    .invitation-text {
         font-size: 1rem;
         line-height: 1.7;
     }
 
-    /* 이음새 텍스트 조정 */
-    .genesis-text,
-    .exploration-text,
-    .section-intro {
-        font-size: 1.05rem;
-    }
 }
 
 /* 모바일 사이즈 추가 반응형 */
@@ -2785,7 +1951,7 @@ section>* {
         font-size: 0.75rem;
     }
 
-    /* Whitepaper 모바일 */
+    /* Corpus applied research */
     .whitepaper-card {
         padding: var(--spacing-md);
         margin: 0 var(--spacing-xs);
@@ -2799,11 +1965,6 @@ section>* {
     .download-btn {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 0.9rem;
-    }
-
-    .license-text {
-        font-size: 0.8rem;
-        padding: 0 var(--spacing-sm);
     }
 
     /* Version Info 작은 모바일 */
@@ -2820,24 +1981,6 @@ section>* {
 
     .date-highlight {
         display: inline-block;
-    }
-
-    .branding-notice {
-        font-size: 0.8rem;
-        line-height: 1.6;
-    }
-
-    /* Vision 페이지 연결선 및 번호 모바일 조정 */
-    .philosophy-number {
-        left: var(--spacing-md);
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        top: -10px;
-    }
-
-    .philosophies-grid::before {
-        left: calc(var(--spacing-md) + 20px);
     }
 
     /* Index 페이지 - URNAVA Introduction 모바일 최적화 */
@@ -2857,18 +2000,6 @@ section>* {
         text-align: left;
     }
 
-    .leah-meaning h3 {
-        font-size: 1.5rem;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .leah-meaning>p {
-        font-size: 0.95rem;
-        line-height: 1.75;
-        text-align: left;
-        padding: 0 var(--spacing-xs);
-    }
-
     .vision-box {
         padding: var(--spacing-md) var(--spacing-sm);
         margin-top: var(--spacing-xl);
@@ -2879,48 +2010,6 @@ section>* {
         font-size: 0.95rem;
         line-height: 1.75;
         text-align: left;
-    }
-
-    /* Vision 페이지 - System Integration (Harmonic Synthesis) 모바일 최적화 */
-    .system-integration {
-        padding: var(--spacing-md) var(--spacing-md);
-        margin-top: var(--spacing-xl);
-        border-radius: 12px;
-    }
-
-    .system-integration h3 {
-        font-size: 1.4rem;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .system-integration p {
-        font-size: 0.95rem;
-        line-height: 1.75;
-        text-align: left;
-    }
-
-    /* Philosophy Items 모바일 */
-    .philosophy-item {
-        padding: var(--spacing-lg) var(--spacing-md);
-        border-radius: 12px;
-    }
-
-    .philosophy-item h3 {
-        font-size: 1.4rem;
-    }
-
-    .philosophy-description {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-
-    .philosophy-details p {
-        font-size: 0.9rem;
-    }
-
-    /* LEAH Meaning 텍스트 */
-    .leah-meaning p {
-        text-align: center;
     }
 
     /* Proposal Section 모바일 */
@@ -2998,13 +2087,6 @@ section>* {
         width: 100%;
     }
 
-    .symbol-description {
-        max-width: 100%;
-        font-size: 0.9rem;
-        padding: var(--spacing-sm);
-        margin: 0 auto;
-    }
-
     /* Names Section 모바일 최적화 */
     .names-grid {
         grid-template-columns: 1fr;
@@ -3032,27 +2114,17 @@ section>* {
     }
 
     /* CTA 섹션 제목 및 본문 통일 - 작은 모바일 */
-    .exploration-content h2,
     .invitation-section .section-title,
     .partnership-section .section-title {
         font-size: 1.4rem;
     }
 
-    .exploration-content p,
-    .invitation-text,
-    .journey-text,
-    .partnership-text,
-    .partnership-call {
+    .invitation-text {
         font-size: 0.95rem;
         line-height: 1.7;
     }
 
     /* 이음새 텍스트 조정 - 작은 모바일 */
-    .genesis-text,
-    .exploration-text,
-    .section-intro {
-        font-size: 0.95rem;
-    }
 }
 
 /* 매우 작은 화면 추가 조정 */
@@ -3077,12 +2149,6 @@ section>* {
     .whitepaper-card {
         padding: var(--spacing-sm);
         margin: 0 var(--spacing-xs);
-    }
-
-    .symbol-description {
-        font-size: 0.85rem;
-        padding: var(--spacing-sm);
-        margin: 0 auto;
     }
 
     /* Proposal Section 극소형 화면 */
@@ -3128,15 +2194,6 @@ section>* {
         line-height: 1.7;
     }
 
-    .leah-meaning h3 {
-        font-size: 1.3rem;
-    }
-
-    .leah-meaning>p {
-        font-size: 0.9rem;
-        line-height: 1.7;
-    }
-
     .vision-box {
         padding: var(--spacing-sm);
         border-radius: 8px;
@@ -3147,37 +2204,6 @@ section>* {
         line-height: 1.7;
     }
 
-    /* Vision 페이지 - System Integration 극소형 화면 */
-    .system-integration {
-        padding: var(--spacing-sm) var(--spacing-sm);
-        border-radius: 8px;
-    }
-
-    .system-integration h3 {
-        font-size: 1.25rem;
-    }
-
-    .system-integration p {
-        font-size: 0.9rem;
-        line-height: 1.7;
-    }
-
-    /* Philosophy Items 작은 모바일 */
-    .philosophy-item {
-        padding: var(--spacing-md) var(--spacing-sm);
-    }
-
-    .philosophy-item h3 {
-        font-size: 1.25rem;
-    }
-
-    .philosophy-description {
-        font-size: 0.9rem;
-    }
-
-    .philosophy-details p {
-        font-size: 0.85rem;
-    }
 }
 
 .whitepaper-version {
@@ -3284,8 +2310,7 @@ body.loaded .hero-subtitle {
     }
 }
 /* =========================================================================
-   ===== v2.5 REDESIGN — Home (Gap · Questions · Architecture · Name)
-   ===== & Corpus page (Flagship · Parts · Summary)
+   ===== v2.5 REDESIGN — Home & Corpus
    ========================================================================= */
 
 /* --- 고정 네비 아래 앵커 오프셋 --- */
@@ -3298,237 +2323,10 @@ body.loaded .hero-subtitle {
     scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
-/* ===== Home §1: The Gap ===== */
-.gap-section {
-    background-color: var(--white);
-}
-
-.gap-content {
-    max-width: 760px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.gap-headline {
-    font-family: var(--font-serif);
-    font-size: clamp(1.7rem, 4vw, 2.5rem);
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    margin-bottom: var(--spacing-md);
-    position: relative;
-    padding-top: var(--spacing-md);
-}
-
-.gap-headline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 1px;
-    background: var(--wisdom-accent);
-}
-
-.gap-text {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    max-width: 640px;
-    margin: 0 auto;
-}
-
 /* ===== Home §2: Three Questions ===== */
 .questions-section {
     background-color: var(--white);
     padding-bottom: calc(var(--spacing-lg) * 1.65);
-}
-
-.tasks-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-    max-width: 1080px;
-    margin: 0 auto;
-}
-
-.task-card {
-    background-color: var(--white);
-    border-radius: 16px;
-    padding: calc(var(--spacing-lg) * 1.1) var(--spacing-md) var(--spacing-lg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.task-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent));
-}
-
-.task-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.task-kicker {
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: var(--accent-brown);
-    margin-bottom: var(--spacing-md);
-}
-
-.task-question {
-    font-family: var(--font-serif);
-    font-size: clamp(1.35rem, 2.2vw, 1.6rem);
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-    margin-bottom: var(--spacing-md);
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.task-answer {
-    font-size: 0.98rem;
-    color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: var(--spacing-md);
-}
-
-.task-answer strong {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-.task-link {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--accent-brown);
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid transparent;
-    transition: border-color var(--transition-fast), color var(--transition-fast);
-}
-
-.task-link:hover {
-    color: var(--accent-brown-hover);
-    border-bottom-color: var(--accent-brown-hover);
-}
-
-.task-arrow {
-    display: inline-block;
-    transition: transform var(--transition-fast);
-}
-
-.task-link:hover .task-arrow {
-    transform: translateX(4px);
-}
-
-/* ===== Home §3: The Architecture ===== */
-.architecture-section {
-    background-color: var(--white);
-}
-
-.architecture-section .section-title {
-    margin-bottom: var(--spacing-sm);
-}
-
-.architecture-lede {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    max-width: 700px;
-    margin: 0 auto var(--spacing-md);
-    line-height: 1.6;
-}
-
-.architecture-visual {
-    display: flex;
-    justify-content: center;
-    padding: 72px 0 64px;
-}
-
-.arc-labels {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-}
-
-.arc-label {
-    position: absolute;
-    text-align: center;
-}
-
-.arc-name {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-}
-
-.arc-desc {
-    display: block;
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin-top: 0.25rem;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-}
-
-.arc-label.arc-top {
-    top: -52px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.arc-label.arc-left {
-    bottom: -34px;
-    left: 14%;
-    transform: translateX(-50%);
-}
-
-.arc-label.arc-right {
-    bottom: -34px;
-    right: 14%;
-    transform: translateX(50%);
-}
-
-.architecture-caption {
-    text-align: center;
-    font-size: 1.12rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 620px;
-    margin: var(--spacing-md) auto 0;
-}
-
-.architecture-caption strong {
-    color: var(--text-primary);
-    font-weight: 600;
 }
 
 /* ===== Home §4: The Name ===== */
@@ -3610,14 +2408,6 @@ body.loaded .hero-subtitle {
     background-color: transparent;
 }
 
-.value-row-head {
-    display: flex;
-    align-items: baseline;
-    gap: var(--spacing-sm);
-    flex-shrink: 0;
-    min-width: 160px;
-}
-
 .value-row-letter {
     font-family: var(--font-serif);
     font-size: 2.8rem;
@@ -3670,143 +2460,6 @@ body.loaded .hero-subtitle {
     margin-bottom: 0;
 }
 
-.name-lede {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    max-width: 700px;
-    margin: 0 auto var(--spacing-xl);
-    line-height: 1.6;
-}
-
-.narrative-other {
-    max-width: 760px;
-    margin: 0 auto var(--spacing-xl);
-    background-color: var(--white);
-    border-radius: 16px;
-    padding: var(--spacing-xl) var(--spacing-lg);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    box-shadow: var(--shadow-md);
-}
-
-.narrative-other::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent));
-}
-
-.narrative-other-term {
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: var(--accent-brown);
-    margin-bottom: var(--spacing-sm);
-}
-
-.narrative-other-quote {
-    font-family: var(--font-serif);
-    font-size: clamp(1.15rem, 2.4vw, 1.45rem);
-    font-style: italic;
-    color: var(--text-primary);
-    line-height: 1.6;
-}
-
-.name-bridge {
-    text-align: center;
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-lg);
-}
-
-.leah-grid {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.leah-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-}
-
-.leah-row-harmony {
-    grid-template-columns: 1fr;
-}
-
-.leah-card {
-    background-color: var(--white);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg) var(--spacing-sm);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.leah-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--wisdom-accent));
-}
-
-.leah-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.leah-letter {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--accent-brown);
-    margin-bottom: var(--spacing-xs);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.leah-word {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    letter-spacing: 0.5px;
-    margin-bottom: var(--spacing-sm);
-}
-
-.leah-traits {
-    display: flex;
-    gap: var(--spacing-xs);
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.leah-card-harmony {
-    padding: var(--spacing-lg);
-}
-
-.leah-harmony-desc {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin: 0;
-}
-
 /* ===== Corpus: version / meta banner ===== */
 .corpus-meta-section {
     background-color: var(--white);
@@ -3845,16 +2498,6 @@ body.loaded .hero-subtitle {
     text-align: center;
     position: relative;
     z-index: 1;
-}
-
-.corpus-kicker {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--accent-brown);
-    margin-bottom: var(--spacing-md);
 }
 
 .monument-title {
@@ -3980,14 +2623,6 @@ body.loaded .hero-subtitle {
     line-height: 1.2;
 }
 
-.monument-part-answer {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: var(--spacing-sm);
-    flex: 1;
-}
-
 .monument-part-meta {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -4090,27 +2725,15 @@ body.loaded .hero-subtitle {
 /* ===== v2.5 반응형 ===== */
 @media (max-width: 992px) {
 
-    .tasks-grid,
     .monument-parts {
         grid-template-columns: 1fr;
         max-width: 560px;
         margin-left: auto;
         margin-right: auto;
     }
-
-    .task-question {
-        flex: none;
-    }
-
-    .monument-part-answer {
-        flex: none;
-    }
 }
 
 @media (max-width: 768px) {
-    .leah-row {
-        grid-template-columns: 1fr;
-    }
 
     .monument-summary {
         flex-direction: column;
@@ -4122,44 +2745,8 @@ body.loaded .hero-subtitle {
         text-align: center;
     }
 
-    .arc-label.arc-left {
-        left: 6%;
-    }
-
-    .arc-label.arc-right {
-        right: 6%;
-    }
-
     .corpus-monument {
         padding: calc(var(--spacing-xl) * 1.1) var(--spacing-md) var(--spacing-lg);
-    }
-}
-
-@media (max-width: 480px) {
-    .arc-label.arc-top {
-        top: -46px;
-    }
-
-    .arc-label.arc-left {
-        left: 0%;
-        bottom: -30px;
-    }
-
-    .arc-label.arc-right {
-        right: 0%;
-        bottom: -30px;
-    }
-
-    .arc-name {
-        font-size: 0.9rem;
-    }
-
-    .arc-desc {
-        font-size: 0.72rem;
-    }
-
-    .architecture-visual {
-        padding: 64px 0 56px;
     }
 }
 
