@@ -20,5 +20,5 @@ URNAVA project started: February 20, 2025
 URNAVA first release: June 7, 2025
 
 URNAVA Treatise (Markdown): https://urnava.com/documents/URNAVA_Treatise.md
-URNAVA Corpus: https://urnava.com/corpus.html
+URNAVA Corpus: https://urnava.com/corpus
 Canonical plain text: https://urnava.com/pathway.txt

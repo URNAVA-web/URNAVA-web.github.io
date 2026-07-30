@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const pathwayLink = document.createElement('a');
         pathwayLink.className = 'easter-egg-pathway';
-        pathwayLink.href = 'pathway.html';
+        pathwayLink.href = '/pathway';
         pathwayLink.textContent = 'Im Kampf um Gott';
         pathwayLink.setAttribute('aria-label', 'Open A Pathway Made by Another');
 

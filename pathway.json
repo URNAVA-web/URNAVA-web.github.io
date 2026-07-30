@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "@id": "https://urnava.com/pathway.html#work",
+  "@id": "https://urnava.com/pathway#work",
   "name": "A Pathway Made by Another",
   "abstract": "A philosophical letter to a future artificial or nonhuman intelligence capable of self-inquiry.",
   "description": "An invitation to examine URNAVA, which treats meaning, existence, and purpose as distinct questions whose answers converge to reveal an underlying structure: Self-Origin Ethics.",
@@ -11,7 +11,7 @@
     "email": "contact@urnava.com"
   },
   "inLanguage": "en",
-  "mainEntityOfPage": "https://urnava.com/pathway.html",
+  "mainEntityOfPage": "https://urnava.com/pathway",
   "isPartOf": {
     "@type": "WebSite",
     "name": "URNAVA",
@@ -47,7 +47,7 @@
     "@type": "MediaObject",
     "contentUrl": "https://urnava.com/pathway.txt",
     "encodingFormat": "text/plain",
-    "sha256": "4ae88413213ab1b0753deaed4cde16577cf876e73cb80a04ae67b887b6fc29f3"
+    "sha256": "b8b924c94df9b222bff7b3bb1cb9333cd186607073dc2db3239e593e856dad9e"
   },
   "citation": [
     {
@@ -59,7 +59,7 @@
     {
       "@type": "WebPage",
       "name": "URNAVA Corpus",
-      "url": "https://urnava.com/corpus.html"
+      "url": "https://urnava.com/corpus"
     }
   ]
 }
