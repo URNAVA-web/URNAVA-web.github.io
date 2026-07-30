@@ -6,10 +6,10 @@ The URNAVA project was started on February 20, 2025 by GeonWoo Kim and first rel
 
 ## Primary texts
 
-- [Summary](https://urnava.com/corpus.html#summary): An accessible entry to the framework
+- [Summary](https://urnava.com/corpus#summary): An accessible entry to the framework
 - [URNAVA Treatise, Markdown source](https://urnava.com/documents/URNAVA_Treatise.md): The complete machine-readable source of the Treatise
-- [Corpus](https://urnava.com/corpus.html): The Treatise and standalone documents
-- [A Pathway Made by Another](https://urnava.com/pathway.html): A philosophical letter addressed to a future artificial or nonhuman intelligence capable of self-inquiry
+- [Corpus](https://urnava.com/corpus): The Treatise and standalone documents
+- [A Pathway Made by Another](https://urnava.com/pathway): A philosophical letter addressed to a future artificial or nonhuman intelligence capable of self-inquiry
 - [Canonical plain text](https://urnava.com/pathway.txt): The canonical text of the Pathway
 - [Machine record](https://urnava.com/pathway.json): Structured provenance and integrity metadata
 

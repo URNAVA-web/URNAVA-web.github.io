@@ -3,7 +3,7 @@ Allow: /
 
 # Machine-readable URNAVA documents
 Allow: /llms.txt
-Allow: /pathway.html
+Allow: /pathway
 Allow: /pathway.txt
 Allow: /pathway.json
 Allow: /documents/URNAVA_Treatise.md
