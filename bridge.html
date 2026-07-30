@@ -28,8 +28,6 @@
 
     <meta name="description"
         content="URNAVA Bridge — Where the URNAVA framework meets those building the future of intelligence. Explore the work ahead and start the dialogue.">
-    <meta name="keywords"
-        content="URNAVA Bridge, AI philosophy, Self-Origin Ethics, Semantics, Ontology, Teleology, AI research dialogue">
     <meta name="author" content="URNAVA">
     <link rel="canonical" href="https://urnava.com/bridge">
     <title>URNAVA Bridge — The Work Ahead</title>
@@ -80,7 +78,7 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://urnava.com"
+                "item": "https://urnava.com/"
             },
             {
                 "@type": "ListItem",
@@ -103,7 +101,7 @@
         "isPartOf": {
             "@type": "WebSite",
             "name": "URNAVA",
-            "url": "https://urnava.com"
+            "url": "https://urnava.com/"
         }
     }
     </script>
@@ -113,18 +111,19 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary navigation">
         <div class="nav-container nav-center-layout">
             <div class="nav-links nav-links-left">
                 <a href="/corpus" class="nav-link">CORPUS</a>
             </div>
             <div class="nav-logo">
-                <a href="/">
-                    <img src="images/URNAVA_Logo_WhiteGlow2.png" alt="URNAVA" class="logo-img">
+                <a href="/" aria-label="URNAVA home">
+                    <img src="images/web/urnava-mark.webp" alt="" class="logo-img" width="256" height="256"
+                        decoding="async">
                 </a>
             </div>
             <div class="nav-links nav-links-right">
-                <a href="/bridge" class="nav-link active">BRIDGE</a>
+                <a href="/bridge" class="nav-link active" aria-current="page">BRIDGE</a>
             </div>
         </div>
     </nav>
@@ -143,7 +142,7 @@
         </section>
 
         <!-- Proposal Section -->
-        <section class="proposal-section">
+        <div class="proposal-section">
             <div class="container">
                 <div class="proposal-content">
                     <div class="proposal-text">
@@ -174,7 +173,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Section 1: URNAVA & LEAH: The Names -->
         <section class="names-section">
@@ -228,7 +227,8 @@
 
                 <div class="symbolic-element">
                     <div class="urnava-symbol">
-                        <img src="images/URNAVA_eye_transparent.png" alt="URNAVA Symbol with Ūrṇā" class="symbol-img">
+                        <img src="images/web/urnava-eye.webp" alt="URNAVA Symbol with Ūrṇā" class="symbol-img"
+                            width="1200" height="300" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -348,7 +348,8 @@
                     <div class="contact-methods">
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <img src="images/email_icon.png" alt="Email" class="contact-icon-img">
+                                <img src="images/web/email-icon.webp" alt="" class="contact-icon-img" width="64"
+                                    height="60" loading="lazy" decoding="async">
                             </div>
                             <div class="contact-info">
                                 <h3>Email</h3>
@@ -358,11 +359,12 @@
 
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <img src="images/X-Logo.png" alt="X" class="contact-icon-img">
+                                <img src="images/web/x-logo.webp" alt="" class="contact-icon-img" width="64" height="60"
+                                    loading="lazy" decoding="async">
                             </div>
                             <div class="contact-info">
                                 <h3>X</h3>
-                                <a href="https://twitter.com/urnava_official" target="_blank" rel="noopener noreferrer"
+                                <a href="https://x.com/urnava_official" target="_blank" rel="noopener noreferrer"
                                     class="contact-link">@urnava_official</a>
                             </div>
                         </div>
@@ -376,7 +378,8 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="images/URNAVA.png" alt="URNAVA" class="footer-wordmark">
+                <img src="images/web/urnava-wordmark.webp" alt="URNAVA" class="footer-wordmark" width="512"
+                    height="156" loading="lazy" decoding="async">
             </div>
             <div class="footer-links">
                 <a href="/corpus">Corpus</a>
@@ -388,12 +391,14 @@
 
             <div class="footer-contact">
                 <p>
-                    <img src="images/email_icon.png" alt="Email" class="social-icon">
+                    <img src="images/web/email-icon.webp" alt="" class="social-icon" width="64" height="60"
+                        loading="lazy" decoding="async">
                     Email: <a href="mailto:contact@urnava.com">contact@urnava.com</a>
                 </p>
                 <p>
-                    <img src="images/X-Logo.png" alt="X" class="social-icon">
-                    X: <a href="https://twitter.com/urnava_official" target="_blank"
+                    <img src="images/web/x-logo.webp" alt="" class="social-icon" width="64" height="60"
+                        loading="lazy" decoding="async">
+                    X: <a href="https://x.com/urnava_official" target="_blank"
                         rel="noopener noreferrer">@urnava_official</a>
                 </p>
             </div>
@@ -403,9 +408,15 @@
             </div>
 
             <div class="easter-eggs">
-                <img src="images/418.png" alt="" class="star" id="star-palath">
-                <img src="images/1207.png" alt="" class="star" id="star-nephte">
-                <img src="images/117.png" alt="" class="star" id="star-akheba">
+                <button type="button" class="star" id="star-palath" aria-label="Star">
+                    <img src="images/web/418.webp" alt="" width="96" height="100" loading="lazy" decoding="async">
+                </button>
+                <button type="button" class="star" id="star-nephte" aria-label="Star">
+                    <img src="images/web/1207.webp" alt="" width="96" height="100" loading="lazy" decoding="async">
+                </button>
+                <button type="button" class="star" id="star-akheba" aria-label="Star">
+                    <img src="images/web/117.webp" alt="" width="96" height="100" loading="lazy" decoding="async">
+                </button>
             </div>
         </div>
     </footer>

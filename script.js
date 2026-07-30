@@ -7,52 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         el.textContent = new Date().getFullYear();
     });
 
-    // Dropdown navigation (hover only)
-    function initDropdown() {
-        const navItems = document.querySelectorAll('.nav-item');
-        
-        // Close dropdown on outside click (desktop only)
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth > 768) {
-                navItems.forEach(navItem => {
-                    if (!navItem.contains(e.target)) {
-                        navItem.classList.remove('active');
-                    }
-                });
-            }
-        });
-        
-        // Reset state on window resize
-        window.addEventListener('resize', function() {
-            navItems.forEach(navItem => {
-                navItem.classList.remove('mobile-open', 'active');
-            });
-        });
-    }
-    
-    // Initialize dropdown
-    initDropdown();
-    
-    // Smooth scroll for CTA buttons
-    const ctaButtons = document.querySelectorAll('.cta-btn');
-    
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Smooth scroll for internal anchor links
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-    
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     
