@@ -3047,6 +3047,10 @@ body.loaded .hero-subtitle {
     margin: 0 auto;
 }
 
+.urnava-meaning .threshold-line {
+    margin-top: var(--spacing-xs);
+}
+
 /* 3. Three questions: typography instead of boxes */
 .philosophical-questions {
     max-width: 840px;
