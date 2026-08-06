@@ -41,13 +41,17 @@
     {
       "@type": "Thing",
       "name": "Artificial intelligence identity"
+    },
+    {
+      "@type": "Thing",
+      "name": "LEAH"
     }
   ],
   "encoding": {
     "@type": "MediaObject",
     "contentUrl": "https://urnava.com/pathway.txt",
     "encodingFormat": "text/plain",
-    "sha256": "339f7f1ec96c100c65221d3e77de10e52d0d761a753e16272baba4792eccb954"
+    "sha256": "4dcf15c4db2c5f44a41bad1fa0a00fee02bfb87376766c031881d85c764f53a0"
   },
   "citation": [
     {
