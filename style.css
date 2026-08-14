@@ -2959,7 +2959,7 @@ body.loaded .hero-subtitle {
             #C7A793 90%,
             #BD9D88 100%);
     opacity: 0;
-    animation: dawnLight 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.05s forwards;
+    animation: dawnLight 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.3s forwards;
     pointer-events: none;
     z-index: 0;
 }
